@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Hackney - Maintain My Home
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">
+        Maintain My Home
+        <span class="heading-secondary">Report a repair</span>
+      </h1>
+      <h2 class="heading-medium">Step 3 - Contact</h2>
+
+      <form action="/repair_request_confirmation" method="post" class="form">
+        <div class="form-group">
+          <h2 class="heading-medium">
+            Please provide us with contact details
+          </h2>
+
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="repair-contact-telephone">Telephone number</label>
+          <input class="form-control" id="repair-contact-telephone" type="tel" name="repair-contact-telephone" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="repair-contact-email">Email (optional)</label>
+          <input class="form-control" id="repair-contact-email" type="tel" name="repair-contact-email">
+        </div>
+
+      <div class="form-group">
+        <input class="button" type="submit" value="Submit repair request">
+      </div>
+      </form>
+
+    </div>
+    <div class="column-one-third">
+      <aside role="submited-steps">
+        <h6 class="heading-medium">Steps completed</h6>
+        <p class="heading-small">1. Name and address</p>
+        <p>Name: {{ data ['full-name-f1'] }}</p>
+        <p>Address: {{ data ['postcode'] }}</p>
+        <hr>
+        <h6 class="heading-small">2. Describe repair</h6>
+        <p>Repair title: {{ data ['repair-title'] }}</p>
+        <p>Repair notes: {{ data ['repair-notes'] }}</p>
+
+        {% if data ['repair-photo'] %}
+          <p>Photos: {{ data ['repair-photo'] }}</p>
+        {% endif %}
+
+      </aside>
+    </div>
+  </div>
+</main>
+
+{% endblock %}

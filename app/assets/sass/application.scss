@@ -1,0 +1,112 @@
+// Path to assets for use with the file-url function
+// in the govuk frontend toolkit's url-helpers partial
+$path: "/public/images/";
+
+// Import GOV.UK elements from /govuk-modules/, this will import the frontend toolkit and some base styles.
+// Take a look in /govuk-modules/_govuk-elements.scss to see which files are imported.
+@import 'govuk-elements';
+
+// Take a look at in app/assets/sass/patterns/ to see which files are imported.
+@import 'patterns/check-your-answers';
+@import 'patterns/task-list';
+
+// Related items
+// (These styles will be moved to GOV.UK elements, duplicating here for now.)
+.govuk-related-items {
+  margin-top: $gutter;
+  border-top: 10px solid $govuk-blue;
+  padding-top: 5px;
+
+  .heading-medium {
+    margin-top: 0.3em;
+    margin-bottom: 0.5em;
+  }
+
+  li {
+    margin-bottom: 10px;
+    list-style-type: none;
+  }
+}
+
+// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
+#global-header-bar {
+  height: 0;
+  width: 120%;
+  margin-left: 0;
+  border-bottom: 4px solid #74c044;
+  &:before {
+    content: "";
+    background: #17b15a;
+    top: 70px;
+    display: block;
+    height: 2px;
+    left: 0;
+    position: absolute;
+    right: 0;
+  }
+  &:after {
+    content: "";
+    background: #9bcf80;
+    top: 82px;
+    display: block;
+    height: 3px;
+    left: 0;
+    position: absolute;
+    right: 0;
+  }
+  @media (min-width: 641px) {
+    &:before {
+      height: 3px;
+      top: 60px;
+    }
+    &:after {
+      top: 75px;
+    }
+  }
+  @media (min-width: 1020px) {
+    max-width: 100%;
+    &:before {
+      height: 5px;
+      top: 78px;
+    }
+    &:after {
+      top: 95px;
+    }
+  }
+  // background-color: #74c044;
+
+
+}
+
+#global-header {
+  .header-wrapper {
+    padding: 10px;
+  }
+  #logo {
+    background: url('../images/hackney_logo_white.png') no-repeat;
+    width: 100%;
+    height: 13px;
+    background-size: contain;
+
+    &:hover, &:focus {
+      // border-bottom-color: transparent;
+    }
+  }
+  @media (min-width: 641px) {
+    .header-wrapper {
+      padding: 12px;
+    }
+    #logo {
+      height: 40px;
+    }
+  }
+  @media (min-width: 1020px) {
+    .header-wrapper {
+      padding: 20px;
+    }
+    #logo {
+      height: 45px;
+    }
+  }
+}

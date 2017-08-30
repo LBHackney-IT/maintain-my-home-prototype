@@ -1,0 +1,150 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Hackney - Maintain My Home
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">
+        Maintain My Home
+        <span class="heading-secondary">Report a repair</span>
+      </h1>
+      <h2 class="heading-medium">Step 2 - Describe repair</h2>
+
+      <form action="/repair_request_contact" method="post" class="form">
+        <div class="form-group">
+          <h2 class="heading-medium">
+            Where is the problem?
+          </h2>
+
+          <div class="form-group">
+            <fieldset class="inline">
+
+              <legend class="visuallyhidden">Where is the problem?</legend>
+
+              <div class="multiple-choice">
+                <input id="repair-location-home" type="radio" name="repair-location" value="home">
+                <label for="repair-location-home">My home</label>
+              </div>
+
+              <div class="multiple-choice">
+                <input id="repair-location-communal" type="radio" name="repair-location" value="communal">
+                <label for="repair-location-communal">Communal Grounds</label>
+              </div>
+
+            </fieldset>
+          </div>
+
+        </div>
+        <!-- <form action="">
+        <div class="form-group">
+          <div class="govuk-option-select filter-field-text">
+            <div class="container-head">
+              <label class="option-select-label" for="repair-keywords">
+                Repair keywords
+              </label>
+            </div>
+            <div class="container-search">
+              <input type="search" name="repair-keywords" id="repair-keywords" value="" maxlength="200">
+              <input class="button" type="" value="Search">
+            </div>
+          </div>
+        </div>
+        </form> -->
+        <div class="form-group">
+          <label class="form-label" for="repair-title">What is the problem?</label>
+          <input class="form-control" id="repair-title" type="text" name="repair-title">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="repair-keyword">What is the problem? Search by keywords</label>
+          <input class="form-control" id="repair-keyword" type="text" name="repair-keyword" value="" maxlength="200">
+        </div>
+        <ul id="results"></ul>
+        <div class="form-group">
+          <label class="form-label" for="repair-notes">
+            Additional notes
+          </label>
+          <textarea class="form-control form-control-3-4" name="repair-notes" id="repair-notes" rows="5"></textarea>
+
+
+        </div>
+
+        <div class="question" id="repair-photo">
+        <label for="repair-photo">
+            <span class="question-heading">
+              Please upload a photo
+            </span>
+        </label>
+        <span class="question-optional">
+          <strong>Optional</strong>
+        </span>
+        <input
+          type="file"
+          name="repair-photo"
+          id="repair-photo"
+          class="file-upload-input"/>
+      </div>
+      <div class="form-group">
+        <input class="button" type="submit" value="Save and continue">
+      </div>
+      </form>
+
+    </div>
+    <div class="column-one-third">
+      <aside role="submited-steps">
+        <h6 class="heading-medium">Steps completed</h6>
+        <p class="heading-small">1. Name and address</p>
+        <p>Name: {{ data ['full-name-f1'] }}</p>
+        <p>Address: {{ data ['postcode'] }}</p>
+        {% for item in items %}
+        <p> {{ item.name }} </p>
+        {% endfor %}
+        <hr>
+      </aside>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+{% block scripts %}
+  {% include "includes/scripts.html" %}
+  {% block page_scripts %}
+
+  <script>
+    $(document).ready(function(){
+        $.ajaxSetup({ cache: false });
+        $('#repair-keyword').keyup(function(){
+
+          console.log(items);
+
+          $('#result').html('');
+          $('#repair-keyword').val('');
+          var searchField = $('#repair-keyword').val();
+          var expression = new RegExp(searchField, "i");
+
+          $.getJSON('items', function(data) {
+            $.each(data, function(key, value){
+              if (value.repairItems.problems.keywords.search(expression) !=1 ) {
+                $('#result').append('<li>' + value.repairItems.problems.keywords + '</li>')
+              }
+            })
+          });
+        });
+        $('#result').on('click', 'li', function() {
+          var click_text = $(this).text().split('|');
+          $('#repair-keyword').val($.trim(click_text[0]));
+          $('#result').html();
+        });
+
+      });
+  </script>
+
+  {% endblock %}
+{% endblock %}

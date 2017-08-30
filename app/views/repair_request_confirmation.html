@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Hackney - Maintain My Home
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">
+        Maintain My Home
+        <span class="heading-secondary">Report a repair</span>
+      </h1>
+      <h2 class="heading-medium">You repair have been submitted</h2>
+      <p>Name: {{ data ['full-name-f1'] }}</p>
+      <p>Address: {{ data ['postcode'] }}</p>
+      <p>Repair title: {{ data ['repair-title'] }}</p>
+      <p>Repair notes: {{ data ['repair-notes'] }}</p>
+      {% if data ['repair-photo'] %}
+      <p>Photos: {{ data ['repair-photo'] }}</p>
+      {% endif %}
+
+      <p>Repair title: {{ data ['repair-title'] }}</p>
+
+      <p>Repair notes: {{ data ['repair-notes'] }}</p>
+      <p>Photos: {{ data ['repair-photo'] }}</p>
+
+      <p>Telephone: {{ data ['repair-contact-telephone'] }}</p>
+      <p>Email: {{ data ['repair-contact-email'] }}</p>
+
+    </div>
+    <div class="column-one-third">
+    </div>
+  </div>
+</main>
+
+{% endblock %}
