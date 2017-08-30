@@ -11,8 +11,16 @@ router.get('/', function (req, res) {
 })
 
 // add your routes here
+// Raise repair routes for Maintain My Home Prototype
+router.get('/raiserepair/repair-details', function (req, res) {
+  res.render('raiserepair/repair-details')
+});
 
-// Repair steps
+router.get('/raiserepair/search-property', function (req, res) {
+  res.render('raiserepair/search-property')
+});
+
+// Raise repair routes for prototype v1
 router.get('/repair_request_start', function (req, res) {
   res.render('repair_request_start')
 });

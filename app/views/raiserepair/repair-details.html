@@ -1,0 +1,151 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Hackney - Maintain My Home
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">
+        Maintain My Home
+        <span class="heading-secondary">Report a repair</span>
+      </h1>
+
+      <form action="/raiserepair/search-property" method="post" class="form">
+        <div class="form-group">
+          <h2 class="heading-medium">
+            Where is the problem?
+          </h2>
+
+          <div class="form-group">
+            <fieldset class="inline">
+
+              <legend class="visuallyhidden">Where is the problem?</legend>
+
+              <div class="multiple-choice">
+                <input id="repair-location-kitchen" type="radio" name="repair-location" value="kitchen">
+                <label for="repair-location-kitchen">Kitchen</label>
+              </div>
+
+              <div class="multiple-choice">
+                <input id="repair-location-bathroom" type="radio" name="repair-location" value="bathroom">
+                <label for="repair-location-bathroom">Bathroom</label>
+              </div>
+
+              <div class="multiple-choice">
+                <input id="repair-location-toilet" type="radio" name="repair-location" value="toilet">
+                <label for="repair-location-toilet">Toilet</label>
+              </div>
+
+              <div class="multiple-choice">
+                <input id="repair-location-bedroom" type="radio" name="repair-location" value="toilet">
+                <label for="repair-location-bedroom">Bedroom</label>
+              </div>
+
+              <div class="multiple-choice">
+                <input id="repair-location-livingroom" type="radio" name="repair-location" value="livingroom">
+                <label for="repair-location-livingroom">Living room</label>
+              </div>
+
+              <div class="multiple-choice">
+                <input id="repair-location-outside" type="radio" name="repair-outside" value="outside">
+                <label for="repair-location-livingroom">Outside</label>
+              </div>
+
+            </fieldset>
+          </div>
+
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="repair-title">What is the problem?</label>
+          <input class="form-control" id="repair-title" type="text" name="repair-title">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="repair-keyword">What is the problem? Search by keywords</label>
+          <input class="form-control" id="repair-keyword" type="text" name="repair-keyword" value="" maxlength="200">
+        </div>
+        <select id="results"></select>
+        <div class="form-group">
+          <label class="form-label" for="repair-notes">
+            Additional notes
+          </label>
+          <textarea class="form-control form-control-3-4" name="repair-notes" id="repair-notes" rows="5"></textarea>
+        </div>
+
+        <div class="question" id="repair-photo">
+          <label for="repair-photo">
+              <span class="question-heading">
+                Please upload a photo
+              </span>
+          </label>
+          <span class="question-optional">
+            <strong>Optional</strong>
+          </span>
+          <input
+            type="file"
+            name="repair-photo"
+            id="repair-photo"
+            class="file-upload-input"/>
+        </div>
+        <div class="form-group">
+          <input class="button" type="submit" value="Save and continue">
+        </div>
+      </form>
+
+    </div>
+
+    <div class="column-one-third">
+      <aside role="submited-steps">
+        <h6 class="heading-medium">Steps completed</h6>
+        <p class="heading-small">1. Name and address</p>
+        <p>Name: {{ data ['full-name-f1'] }}</p>
+        <p>Address: {{ data ['postcode'] }}</p>
+        <!-- {% for item in items %}
+        <p> {{ item.name }} </p>
+        {% endfor %} -->
+        <hr>
+      </aside>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+{% block scripts %}
+  {% include "includes/scripts.html" %}
+  {% block page_scripts %}
+
+  <script>
+    $(document).ready(function(){
+        $.ajaxSetup({ cache: false });
+        $('#repair-keyword').keyup(function(){
+          $('#results').html('');
+          $('#repair-keyword').val('');
+          var searchField = $('#repair-keyword').val();
+          var expression = new RegExp(searchField, "i");
+
+          $.getJSON('../public/javascripts/repairItems.json', function(data) {
+            $.each(data.repairItems, function(key, value){
+              // console.log(value.name);
+              if (value.name.search(expression) !=1 ) {
+                $('#results').append('<option value=" ' + value.name + ' ">' + value.name + '</option>')
+              }
+            })
+          });
+        });
+        $('#results').on('click', 'li', function() {
+          var click_text = $(this).text().split('|');
+          $('#repair-keyword').val($.trim(click_text[0]));
+          $('#result').html();
+        });
+
+      });
+  </script>
+
+  {% endblock %}
+{% endblock %}
