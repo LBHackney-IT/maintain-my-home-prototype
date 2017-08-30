@@ -4,7 +4,7 @@ var router = express.Router();
 
 var repairItems = require('./repairItems.json');
 var items = repairItems['repairItems'];
-// var keywords =
+
 // Route index page
 router.get('/', function (req, res) {
   res.render('index')
@@ -22,9 +22,7 @@ router.get('/repair_request_describe', function (req, res) {
 
   function getJson(req, res, next) {
     res.send(items);
-    // res.send(keywords);
   }
-  console.log(items[0]['name']);
 });
 
 router.get('/repair_request_contact', function (req, res) {
