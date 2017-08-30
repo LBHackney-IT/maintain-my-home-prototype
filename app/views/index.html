@@ -14,20 +14,57 @@
         <span class="heading-secondary">Report a repair</span>
       </h1>
       <p class="lede">We provide a housing and communal grounds repairs service for all our council tenants.</p>
-      <p>As a Tenant you can raise repairs for your home and communal areas. <br>As a Leaseholder you can raise repairs for communal areas only.</p>
 
-      <h2 class="heading-medium">Raise a repair in 3 steps</h2>
+      <h2 class="heading-medium">Is your repair one of the following</h2>
 
-      <p>You can raise most of basic types of repairs online and book an appointment.</p>
-      <p>For more complex types of repairs we will help you create a repair request online and then call you to schedule an appointment.</p>
-
-      <form action="/repair_request_start">
+      <form action="/maintain-my-home/raise-repair">
         <div class="form-group">
-          <input class="button" type="submit" value="Start">
+          <fieldset>
+
+            <legend class="visuallyhidden">Is your repair one of the following</legend>
+
+            <div class="multiple-choice">
+              <input id="repair-#" type="radio" name="repair-problem" value="#">
+              <label for="repair-#">Blocked only toilet</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="repair-##" type="radio" name="repair-problem" value="##">
+              <label for="repair-##">Blocked toilet</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="repair-###" type="radio" name="repair-problem" value="###">
+              <label for="repair-###">Water dripping over a light bulb</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="repair-####" type="radio" name="repair-problem" value="####">
+              <label for="repair-####">Kitchen sink blocked</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="repair-#####" type="radio" name="repair-problem" value="#####">
+              <label for="repair-#####">Tap dripping</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="repair-######" type="radio" name="repair-problem" value="#####">
+              <label for="repair-######">Ease and adjustment of doors</label>
+            </div>
+
+          </fieldset>
+        </div>
+        <div class="form-group">
+          <input class="button" type="submit" value="Confirm">
         </div>
       </form>
 
-      <h2 class="heading-medium">Useful information about raising a repair</h2>
+      <!-- <form action="/repair_request_start">
+        <div class="form-group">
+          <input class="button" type="submit" value="Start">
+        </div>
+      </form> -->
 
 
     </div>
@@ -43,7 +80,7 @@
 0800 111 999</a></span></strong>
         </div>
         <br>
-        <h3 class="heading-small">If your repair is one of the following</h3>
+        <!-- <h3 class="heading-small">If your repair is one of the following</h3>
         <ul class="list list-bullet">
           <li>flood, fire or explosion damage</li>
           <li>an uncontrollable water leak</li>
@@ -58,7 +95,7 @@
           <strong class="bold-small">Please call our repair centre on <span itemprop="telephone"><a href="tel:+020 8356 3691">
 020 8356 3691</a></strong>
         </div>
-        <br>
+        <br> -->
       </aside>
 
     </div>
