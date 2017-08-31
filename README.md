@@ -1,3 +1,50 @@
+# Notes about Maintain My Home Prototype
+
+## Install guide
+
+### Clone the repo and info
+
+It's built on the [Express](http://expressjs.com/) framework, and uses these GOV.UK resources:
+
+- [GOV.UK template](https://github.com/alphagov/govuk_template)
+- [GOV.UK front end toolkit](https://github.com/alphagov/govuk_frontend_toolkit)
+- [GOV.UK elements](https://github.com/alphagov/govuk_elements)
+
+### Requirements
+
+node.js - version 6.x.x
+
+### Install dependencies
+
+```
+npm install
+```
+
+### Run the kit
+```
+npm start
+```
+
+Go to [localhost:3000](http://localhost:3000) in your browser.
+
+## Prototype branch
+name: maintain-my-home-prototype
+
+## Styles
+
+Styles mimicking hackney branding can be found in 'app/assets/sass/application.scss'
+
+Hackney logo is in 'app/assets/images/' and needs to be copied to the '/public/images'
+
+## Hackney main template
+Can be found in ''/lib/govuk_template_unbranded.html'
+
+'app/views/layout.html' extends template govuk_template_unbranded.html
+
+## Routes and config
+
+'routes.js' and 'config.js' is where routing between views is made and also 'service type' changed
+
 # GOV.UK Prototype kit · [![Greenkeeper badge](https://badges.greenkeeper.io/alphagov/govuk_prototype_kit.svg)](https://greenkeeper.io/)
 
 Go to the [GOV.UK Prototype Kit site](https://govuk-prototype-kit.herokuapp.com/docs) to download the latest version and read the documentation.
@@ -18,10 +65,3 @@ You must protect user privacy at all times, even when using prototypes. Prototyp
 
 - [Installation guide for new users (non technical)](https://govuk-prototype-kit.herokuapp.com/docs/install/introduction)
 - [Installation guide for developers (technical)](https://govuk-prototype-kit.herokuapp.com/docs/install/developer-install-instructions)
-
-## Community
-
-We have two Slack channels for the Prototype kit. You'll need a government email address to join them.
-
-* [Slack channel for users of the prototype kit](https://ukgovernmentdigital.slack.com/messages/prototype-kit/)
-* [Slack channel for developers of the prototype kit](https://ukgovernmentdigital.slack.com/messages/prototype-kit-dev/)
