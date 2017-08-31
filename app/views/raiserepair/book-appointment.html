@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Hackney - Maintain My Home
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">
+        Maintain My Home
+        <span class="heading-secondary">Report a repair</span>
+      </h1>
+
+      <form action="/raiserepair/confirmation" method="post" class="form">
+        <div class="form-group">
+          <h2 class="heading-medium">
+            Please choose a date for repair appointment
+          </h2>
+            <p>calendar here</p>
+        </div>
+        <div class="form-group">
+          <input class="button" type="submit" value="Save and continue">
+        </div>
+      </form>
+
+    </div>
+
+    <div class="column-one-third">
+      <aside role="submited-steps">
+        <h6 class="heading-medium">Steps completed</h6>
+        <p class="heading-small">1. Repair title</p>
+        <p>Title: {{ data ['repairProblem'] }}</p>
+        <p class="heading-small">2. Repair details</p>
+        <p>details: {{ data [''] }}</p>
+        <p class="heading-small">3. Property address</p>
+        <p>Address: {{ data [''] }}</p>
+
+        <hr>
+      </aside>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+{% block scripts %}
+  {% include "includes/scripts.html" %}
+  {% block page_scripts %}
+
+  <!-- additional scripts here -->
+
+  {% endblock %}
+{% endblock %}

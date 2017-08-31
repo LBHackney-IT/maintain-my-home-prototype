@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Hackney - Maintain My Home
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">
+        Maintain My Home
+        <span class="heading-secondary">Report a repair</span>
+      </h1>
+
+      <h2>Thank you for submitting your repair</h2>
+
+    </div>
+
+    <div class="column-one-third">
+      <aside role="submited-steps">
+        <h6 class="heading-medium">Steps completed</h6>
+        <p class="heading-small">1. Step</p>
+        <p>Name: {{ data ['full-name-f1'] }}</p>
+        <p>Address: {{ data ['postcode'] }}</p>
+
+        <hr>
+      </aside>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+{% block scripts %}
+  {% include "includes/scripts.html" %}
+  {% block page_scripts %}
+
+  <!-- additional scripts here -->
+
+  {% endblock %}
+{% endblock %}

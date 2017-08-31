@@ -12,12 +12,66 @@ router.get('/', function (req, res) {
 
 // add your routes here
 // Raise repair routes for Maintain My Home Prototype
+
 router.get('/raiserepair/repair-details', function (req, res) {
-  res.render('raiserepair/repair-details')
-});
+  // get the answer from the query string
+  var repairProblem = req.query.repairProblem
+  //
+  // if (answer === 'emergency') {
+  //   // redirect to call rcc
+  //   res.redirect('emergency-contact')
+  // } else if (answer !== 'none') {
+  //   // redirect to repair
+  //   res.redirect('repair-details')
+  //   // redirect to new repair
+  // } else {
+  //   res.render('new-repair-details')
+  // }
+
+  if (repairProblem === 'e')
+    // redirect to call rcc
+      res.redirect('raiserepair/emergency-contact')
+   else if (repairProblem !== ('e' && '0'))
+    // redirect to repair
+      res.render('raiserepair/repair-details')
+   else if (repairProblem === 0)
+      res.redirect('raiserepair/new-repair-details')
+
+  // res.render('raiserepair/repair-details')
+
+})
+
+router.get('/examples/over-18', function (req, res) {
+  // get the answer from the query string (eg. ?over18=false)
+  var over18 = req.query.over18
+
+  if (over18 === 'false') {
+    // redirect to the relevant page
+    res.redirect('/docs/examples/under-18')
+  } else {
+    // if over18 is any other value (or is missing) render the page requested
+    res.render('examples/over-18')
+  }
+})
 
 router.get('/raiserepair/search-property', function (req, res) {
   res.render('raiserepair/search-property')
+});
+
+router.get('/raiserepair/cannot-describe-repair', function (req, res) {
+  res.render('raiserepair/cannot-describe-repair')
+});
+
+router.get('/raiserepair/cannot-find-property', function (req, res) {
+  res.render('raiserepair/cannot-find-property')
+});
+
+router.get('/raiserepair/book-appointment', function (req, res) {
+  res.render('raiserepair/book-appointment')
+});
+
+router.get('/raiserepair/confirmation', function (req, res) {
+  res.render('raiserepair/confirmation')
 });
 
 // Raise repair routes for prototype v1

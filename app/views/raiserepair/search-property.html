@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Hackney - Maintain My Home
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">
+        Maintain My Home
+        <span class="heading-secondary">Report a repair</span>
+      </h1>
+
+      <form action="/raiserepair/book-appointment" method="post" class="form">
+        <div class="form-group">
+          <h2 class="heading-medium">
+            Please provide your address
+          </h2>
+            <div class="form-group">
+              <label class="form-label" for="full-name-f1">Full name</label>
+              <input class="form-control" id="full-name-f1" type="text" name="full-name-f1">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="postcode">
+                Postcode
+                <span class="form-hint small">
+                  Search your address by postcode
+                  <br>
+                  For example, ‘E2 7NX’.
+                </span>
+              </label>
+              <input class="form-control" id="postcode" type="text" name="postcode">
+            </div>
+            <div class="form-group">
+              <input class="button" type="submit" value="Save and continue">
+            </div>
+        </div>
+      </form>
+
+      <form action="/raiserepair/cannot-find-property" method="post" class="form inline">
+        <div class="form-group inline">
+          <input class="button" type="submit" value="Cannot find property">
+        </div>
+      </form>
+
+    </div>
+
+    <div class="column-one-third">
+      <aside role="submited-steps">
+        <h6 class="heading-medium">Steps completed</h6>
+        <p class="heading-small">1. Repair title</p>
+        <p>Title: {{ data ['repairProblem'] }}</p>
+        <p class="heading-small">2. Repair details</p>
+        <p>details: {{ data [''] }}</p>
+
+
+        <hr>
+      </aside>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+{% block scripts %}
+  {% include "includes/scripts.html" %}
+  {% block page_scripts %}
+
+  <script>
+    $(document).ready(function(){
+        $.ajaxSetup({ cache: false });
+        $('#repair-keyword').keyup(function(){
+          $('#results').html('');
+          $('#repair-keyword').val('');
+          var searchField = $('#repair-keyword').val();
+          var expression = new RegExp(searchField, "i");
+
+          $.getJSON('../public/javascripts/repairItems.json', function(data) {
+            $.each(data.repairItems, function(key, value){
+              // console.log(value.name);
+              if (value.name.search(expression) !=1 ) {
+                $('#results').append('<option value=" ' + value.name + ' ">' + value.name + '</option>')
+              }
+            })
+          });
+        });
+        $('#results').on('click', 'li', function() {
+          var click_text = $(this).text().split('|');
+          $('#repair-keyword').val($.trim(click_text[0]));
+          $('#result').html();
+        });
+
+      });
+  </script>
+
+  {% endblock %}
+{% endblock %}

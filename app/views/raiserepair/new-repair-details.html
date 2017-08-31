@@ -17,7 +17,7 @@
       <form action="/raiserepair/search-property" method="post" class="form">
         <div class="form-group">
           <h2 class="heading-medium">
-            Where is the problem?
+            New repair - Where is the problem?
           </h2>
 
           <div class="form-group">
@@ -91,15 +91,8 @@
             id="repair-photo"
             class="file-upload-input"/>
         </div>
-
-        <div class="form-group inline">
+        <div class="form-group">
           <input class="button" type="submit" value="Save and continue">
-        </div>
-      </form>
-
-      <form action="/raiserepair/cannot-describe-repair" method="post" class="form inline">
-        <div class="form-group inline">
-          <input class="button" type="submit" value="Cannot describe repair">
         </div>
       </form>
 
@@ -108,9 +101,9 @@
     <div class="column-one-third">
       <aside role="submited-steps">
         <h6 class="heading-medium">Steps completed</h6>
-        <p class="heading-small">1. Repair title</p>
-        <p>Repair problem: {{ data ['repairProblem'] }}</p>
-
+        <p class="heading-small">1. Name and address</p>
+        <p>Name: {{ data ['full-name-f1'] }}</p>
+        <p>Address: {{ data ['postcode'] }}</p>
         <!-- {% for item in items %}
         <p> {{ item.name }} </p>
         {% endfor %} -->

@@ -1,0 +1,797 @@
+{
+  "repairItems": [
+    {
+      "repairItemId": "10",
+      "name": "Baths",
+      "icon": "ah ah-bath",
+      "problems": [
+        {
+          "problemId": "58",
+          "label": "Bath leaking, blocked or damaged",
+          "popular": false,
+          "keywords": [
+            "bath",
+            "bathroom",
+            "leak",
+            "leaking",
+            "blocked"
+          ]
+        },
+        {
+          "problemId": "55",
+          "label": "Bath panel loose or broken",
+          "popular": false,
+          "keywords": [
+            "bath",
+            "bathroom"
+          ]
+        }
+      ]
+    },
+    {
+      "repairItemId": "5",
+      "name": "Electric Fire and Heating",
+      "icon": "ah ah-heater",
+      "problems": [
+        {
+          "problemId": "26",
+          "label": "Fault with an electric fire or heater",
+          "popular": false,
+          "keywords": []
+        }
+      ]
+    },
+    {
+      "repairItemId": "6",
+      "name": "Electricity",
+      "icon": "ah ah-bolt",
+      "problems": [
+        {
+          "problemId": "27",
+          "label": "Electrical fitting smoking",
+          "popular": false,
+          "keywords": [
+            "plug",
+            "wire",
+            "smoke"
+          ]
+        },
+        {
+          "problemId": "28",
+          "label": "No power to lights, sockets or electrics tripping",
+          "popular": false,
+          "keywords": [
+            "plug",
+            "tripping",
+            "wire",
+            "no power",
+            "no electricity"
+          ]
+        },
+        {
+          "problemId": "31",
+          "label": "Problem with a light",
+          "popular": false,
+          "keywords": []
+        },
+        {
+          "problemId": "29",
+          "label": "Problem with a socket",
+          "popular": false,
+          "keywords": [
+            "plug",
+            "socket"
+          ]
+        },
+        {
+          "problemId": "32",
+          "label": "Problem with a switch",
+          "popular": false,
+          "keywords": [
+            "switch"
+          ]
+        },
+        {
+          "problemId": "212",
+          "label": "Problem with an existing external / security light",
+          "popular": false,
+          "keywords": []
+        },
+        {
+          "problemId": "35",
+          "label": "Problem with an extractor fan",
+          "popular": false,
+          "keywords": []
+        }
+      ]
+    },
+    {
+      "repairItemId": "30",
+      "name": "Exterior",
+      "icon": "ah ah-house",
+      "problems": [
+        {
+          "problemId": "195",
+          "label": "Bollard broken",
+          "popular": false,
+          "keywords": []
+        },
+        {
+          "problemId": "188",
+          "label": "Loose, damaged or cracked brickwork",
+          "popular": false,
+          "keywords": []
+        },
+        {
+          "problemId": "190",
+          "label": "Loose, damaged or missing copings",
+          "popular": false,
+          "keywords": []
+        }
+      ]
+    },
+    {
+      "repairItemId": "16",
+      "name": "External Doors",
+      "icon": "ah ah-door-external",
+      "problems": [
+        {
+          "problemId": "109",
+          "label": "Door closer is broken",
+          "popular": false,
+          "keywords": [
+            "door"
+          ]
+        },
+        {
+          "problemId": "216",
+          "label": "Fault with glass door (loose, damaged, cracked or broken glass including seals)",
+          "popular": false,
+          "keywords": [
+            "door"
+          ]
+        },
+        {
+          "problemId": "114",
+          "label": "Fault with letterbox",
+          "popular": false,
+          "keywords": [
+            "letterbox"
+          ]
+        },
+        {
+          "problemId": "110",
+          "label": "Fault with plastic door, including locks, hinges or handles",
+          "popular": false,
+          "keywords": [
+            "door"
+          ]
+        },
+        {
+          "problemId": "119",
+          "label": "Fault with wooden door, including locks, hinges or handles",
+          "popular": false,
+          "keywords": [
+            "door"
+          ]
+        },
+        {
+          "problemId": "201",
+          "label": "Keys lost, damaged or stolen",
+          "popular": false,
+          "keywords": [
+            "keys",
+            "lost keys"
+          ]
+        },
+        {
+          "problemId": "115",
+          "label": "Problem with a door frame",
+          "popular": false,
+          "keywords": [
+            "door",
+            "door frame"
+          ]
+        }
+      ]
+    },
+    {
+      "repairItemId": "22",
+      "name": "Fences",
+      "icon": "ah ah-fence",
+      "problems": [
+        {
+          "problemId": "161",
+          "label": "Fault with gate posts",
+          "popular": false,
+          "keywords": [
+            "fencing"
+          ]
+        },
+        {
+          "problemId": "157",
+          "label": "Fault with timber fencing including rails and lags",
+          "popular": false,
+          "keywords": [
+            "fence",
+            "fencing"
+          ]
+        }
+      ]
+    },
+    {
+      "repairItemId": "35",
+      "name": "Floor Tiles",
+      "icon": "ah ah-floor-tiles",
+      "problems": [
+        {
+          "problemId": "207",
+          "label": "Fault with floor tiles (loose, damaged or broken) ",
+          "popular": false,
+          "keywords": [
+            "tiling",
+            "floor tiles"
+          ]
+        }
+      ]
+    },
+    {
+      "repairItemId": "25",
+      "name": "Garage",
+      "icon": "ah ah-garage",
+      "problems": [
+        {
+          "problemId": "220",
+          "label": "Damaged garage roof",
+          "popular": false,
+          "keywords": []
+        },
+        {
+          "problemId": "170",
+          "label": "Door needs replacing",
+          "popular": false,
+          "keywords": []
+        },
+        {
+          "problemId": "172",
+          "label": "Fault with garage door frame (broken or damaged)",
+          "popular": false,
+          "keywords": []
+        },
+        {
+          "problemId": "169",
+          "label": "Fault with garage doors or locks",
+          "popular": false,
+          "keywords": []
+        },
+        {
+          "problemId": "202",
+          "label": "Keys, lost damaged or stolen",
+          "popular": false,
+          "keywords": []
+        }
+      ]
+    },
+    {
+      "repairItemId": "21",
+      "name": "Garden",
+      "icon": "ah ah-leaf",
+      "problems": [
+        {
+          "problemId": "155",
+          "label": "Fault with broken clothes line/post",
+          "popular": false,
+          "keywords": []
+        }
+      ]
+    },
+    {
+      "repairItemId": "24",
+      "name": "Garden Walls",
+      "icon": "ah ah-wall",
+      "problems": [
+        {
+          "problemId": "167",
+          "label": "Boundary wall in need of repair",
+          "popular": false,
+          "keywords": []
+        },
+        {
+          "problemId": "168",
+          "label": "Wall coping missing or broken",
+          "popular": false,
+          "keywords": []
+        }
+      ]
+    },
+    {
+      "repairItemId": "23",
+      "name": "Gates",
+      "icon": "ah ah-gate",
+      "problems": [
+        {
+          "problemId": "162",
+          "label": "Gate bolt, catch or hinge is broken or loose",
+          "popular": false,
+          "keywords": []
+        },
+        {
+          "problemId": "163",
+          "label": "Gate broken or missing",
+          "popular": false,
+          "keywords": [
+            "catch"
+          ]
+        }
+      ]
+    },
+    {
+      "repairItemId": "36",
+      "name": "Glazing",
+      "icon": "ah ah-glazing",
+      "problems": [
+        {
+          "problemId": "208",
+          "label": "Loose, damaged, cracked or broken glass window",
+          "popular": false,
+          "keywords": []
+        }
+      ]
+    },
+    {
+      "repairItemId": "15",
+      "name": "Hot Water",
+      "icon": "ah ah-water-hot",
+      "problems": [
+        {
+          "problemId": "106",
+          "label": "Boiler or other part of the system leaking",
+          "popular": false,
+          "keywords": [
+            "boiler leaking"
+          ]
+        },
+        {
+          "problemId": "105",
+          "label": "Boiler or water heater not working or noisy",
+          "popular": false,
+          "keywords": [
+            "pipe",
+            "boiler",
+            "water heater"
+          ]
+        },
+        {
+          "problemId": "107",
+          "label": "No hot water, water too hot or too cold",
+          "popular": false,
+          "keywords": [
+            "boiler",
+            "no hot water",
+            "water too hot",
+            "water too cold"
+          ]
+        }
+      ]
+    },
+    {
+      "repairItemId": "39",
+      "name": "Infestations or Pests",
+      "icon": "ah ah-infestations-pests",
+      "problems": [
+        {
+          "problemId": "211",
+          "label": "Infestations or  Pests",
+          "popular": false,
+          "keywords": [
+            "bees",
+            "mice",
+            "mouse",
+            "nest",
+            "slug"
+          ]
+        },
+        {
+          "problemId": "224",
+          "label": "Wasps Nest",
+          "popular": false,
+          "keywords": []
+        }
+      ]
+    },
+    {
+      "repairItemId": "28",
+      "name": "Internal and External Stairs",
+      "icon": "ah ah-stairs-internal",
+      "problems": [
+        {
+          "problemId": "184",
+          "label": "Loose or broken handrails or banister",
+          "popular": false,
+          "keywords": [
+            "banister"
+          ]
+        },
+        {
+          "problemId": "185",
+          "label": "Loose or broken stairs, treads, spindles and newel posts",
+          "popular": false,
+          "keywords": []
+        }
+      ]
+    },
+    {
+      "repairItemId": "17",
+      "name": "Internal Doors",
+      "icon": "ah ah-door-internal",
+      "problems": [
+        {
+          "problemId": "124",
+          "label": "Fault with internal door including locks, hinges or handles",
+          "popular": false,
+          "keywords": [
+            "bedroom door",
+            "door furniture"
+          ]
+        }
+      ]
+    },
+    {
+      "repairItemId": "19",
+      "name": "Kitchens",
+      "icon": "ah ah-kitchen",
+      "problems": [
+        {
+          "problemId": "136",
+          "label": "Fault with broken or damaged cupboard or shelf",
+          "popular": false,
+          "keywords": [
+            "cupboard",
+            "kitchen"
+          ]
+        },
+        {
+          "problemId": "140",
+          "label": "Fault with broken, sticking or damaged drawer",
+          "popular": false,
+          "keywords": [
+            "cupboard",
+            "kitchen drawer"
+          ]
+        },
+        {
+          "problemId": "134",
+          "label": "Fault with loose or damaged worktop",
+          "popular": false,
+          "keywords": []
+        }
+      ]
+    },
+    {
+      "repairItemId": "38",
+      "name": "Mould and Damp",
+      "icon": "ah ah-mold-damp",
+      "problems": [
+        {
+          "problemId": "210",
+          "label": "Mould and Damp",
+          "popular": false,
+          "keywords": [
+            "mould",
+            "damp"
+          ]
+        }
+      ]
+    },
+    {
+      "repairItemId": "26",
+      "name": "Paving and Steps",
+      "icon": "ah ah-stairs",
+      "problems": [
+        {
+          "problemId": "176",
+          "label": "Concrete path broken or loose",
+          "popular": false,
+          "keywords": []
+        },
+        {
+          "problemId": "177",
+          "label": "Flags broken or loose",
+          "popular": false,
+          "keywords": [
+            "paving"
+          ]
+        },
+        {
+          "problemId": "178",
+          "label": "Steps broken or loose",
+          "popular": false,
+          "keywords": []
+        },
+        {
+          "problemId": "175",
+          "label": "Tarmac path broken or loose",
+          "popular": false,
+          "keywords": []
+        }
+      ]
+    },
+    {
+      "repairItemId": "7",
+      "name": "Roofs",
+      "icon": "ah ah-roof",
+      "problems": [
+        {
+          "problemId": "38",
+          "label": "Damaged or missing slates, tiles or felt",
+          "popular": false,
+          "keywords": [
+            "tiling"
+          ]
+        }
+      ]
+    },
+    {
+      "repairItemId": "13",
+      "name": "Shower",
+      "icon": "ah ah-shower",
+      "problems": [
+        {
+          "problemId": "89",
+          "label": "Blocked shower, or fault with tray or screen (including leaks)",
+          "popular": false,
+          "keywords": [
+            "bathroom",
+            "shower",
+            "blocked"
+          ]
+        },
+        {
+          "problemId": "88",
+          "label": "Fault with electric shower unit",
+          "popular": false,
+          "keywords": [
+            "bathroom",
+            "electric shower"
+          ]
+        },
+        {
+          "problemId": "87",
+          "label": "Fault with shower hose or head",
+          "popular": false,
+          "keywords": [
+            "bathroom",
+            "shower"
+          ]
+        }
+      ]
+    },
+    {
+      "repairItemId": "20",
+      "name": "Sinks / Basins",
+      "icon": "ah ah-sink",
+      "problems": [
+        {
+          "problemId": "66",
+          "label": "Fault with basin",
+          "popular": false,
+          "keywords": [
+            "basin"
+          ]
+        },
+        {
+          "problemId": "146",
+          "label": "Sinks leaking, blocked or damaged",
+          "popular": false,
+          "keywords": [
+            "sink",
+            "bathroom",
+            "kitchen",
+            "leaking",
+            "blocked"
+          ]
+        }
+      ]
+    },
+    {
+      "repairItemId": "40",
+      "name": "Smoke Alarms ",
+      "icon": "ah ah-smoke-alarms",
+      "problems": [
+        {
+          "problemId": "204",
+          "label": "Problem with smoke alarm",
+          "popular": false,
+          "keywords": [
+            "carbon monoxide alarm",
+            "smoke alarm"
+          ]
+        }
+      ]
+    },
+    {
+      "repairItemId": "4",
+      "name": "Solid Fuel",
+      "icon": "ah ah-solid-fuel",
+      "problems": [
+        {
+          "problemId": "22",
+          "label": "Problem with solid fuel heating",
+          "popular": false,
+          "keywords": []
+        }
+      ]
+    },
+    {
+      "repairItemId": "37",
+      "name": "Taps",
+      "icon": "ah ah-taps",
+      "problems": [
+        {
+          "problemId": "209",
+          "label": "Loose, damaged, leaking or stiff taps",
+          "popular": false,
+          "keywords": [
+            "sinks",
+            "tap",
+            "kitchen",
+            "bathroom",
+            "tap loose",
+            "tap damaged",
+            "tap leaking",
+            "tap stiff"
+          ]
+        },
+        {
+          "problemId": "226",
+          "label": "No hot water",
+          "popular": false,
+          "keywords": [
+            "tap",
+            "no hot water"
+          ]
+        }
+      ]
+    },
+    {
+      "repairItemId": "34",
+      "name": "Wall Tiles",
+      "icon": "ah ah-wall-tiles",
+      "problems": [
+        {
+          "problemId": "206",
+          "label": "Loose, damaged or broken wall tiles",
+          "popular": false,
+          "keywords": [
+            "tiling",
+            "tiles",
+            "wall tiles"
+          ]
+        }
+      ]
+    },
+    {
+      "repairItemId": "27",
+      "name": "Walls and Floors",
+      "icon": "ah ah-floor",
+      "problems": [
+        {
+          "problemId": "181",
+          "label": "Broken plaster on the ceiling",
+          "popular": false,
+          "keywords": []
+        },
+        {
+          "problemId": "182",
+          "label": "Broken plaster on the wall",
+          "popular": false,
+          "keywords": []
+        },
+        {
+          "problemId": "217",
+          "label": "Cracks/problems with artex ceiling",
+          "popular": false,
+          "keywords": []
+        },
+        {
+          "problemId": "183",
+          "label": "Loose or broken skirting board",
+          "popular": false,
+          "keywords": []
+        },
+        {
+          "problemId": "179",
+          "label": "Loose, broken or noisy floorboards",
+          "popular": false,
+          "keywords": []
+        }
+      ]
+    },
+    {
+      "repairItemId": "14",
+      "name": "Water Supply ",
+      "icon": "ah ah-water",
+      "problems": [
+        {
+          "problemId": "219",
+          "label": "Low water pressure",
+          "popular": false,
+          "keywords": [
+            "water pressure"
+          ]
+        },
+        {
+          "problemId": "101",
+          "label": "Only cold water from hot tap",
+          "popular": false,
+          "keywords": [
+            "water cold"
+          ]
+        },
+        {
+          "problemId": "94",
+          "label": "Problem with water supply including leaks, tanks and cylinders",
+          "popular": false,
+          "keywords": [
+            "pipe"
+          ]
+        },
+        {
+          "problemId": "97",
+          "label": "Radiator valve leaking",
+          "popular": false,
+          "keywords": [
+            "radiator"
+          ]
+        }
+      ]
+    },
+    {
+      "repairItemId": "12",
+      "name": "WC",
+      "icon": "ah ah-toilet",
+      "problems": [
+        {
+          "problemId": "80",
+          "label": "Leaking, blocked or damaged WC / toilet",
+          "popular": false,
+          "keywords": [
+            "toilet",
+            "toilet leaking"
+          ]
+        },
+        {
+          "problemId": "75",
+          "label": "Major leak - cannot stop",
+          "popular": false,
+          "keywords": [
+            "toilet"
+          ]
+        },
+        {
+          "problemId": "76",
+          "label": "Problem with cistern",
+          "popular": false,
+          "keywords": [
+            "toilet"
+          ]
+        }
+      ]
+    },
+    {
+      "repairItemId": "18",
+      "name": "Window",
+      "icon": "ah ah-window",
+      "problems": [
+        {
+          "problemId": "128",
+          "label": "Fault with window including locks, hinges or handles",
+          "popular": false,
+          "keywords": [
+            "window"
+          ]
+        }
+      ]
+    }
+  ]
+}
