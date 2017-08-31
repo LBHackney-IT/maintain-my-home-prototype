@@ -2,57 +2,31 @@ var express = require('express');
 var app = express();
 var router = express.Router();
 
+// To pass data into the view
 var repairItems = require('./repairItems.json');
 var items = repairItems['repairItems'];
 
 // Route index page
 router.get('/', function (req, res) {
   res.render('index')
-})
+});
 
 // add your routes here
 // Raise repair routes for Maintain My Home Prototype
 
 router.get('/raiserepair/repair-details', function (req, res) {
   // get the answer from the query string
-  var repairProblem = req.query.repairProblem
-  //
-  // if (answer === 'emergency') {
-  //   // redirect to call rcc
-  //   res.redirect('emergency-contact')
-  // } else if (answer !== 'none') {
-  //   // redirect to repair
-  //   res.redirect('repair-details')
-  //   // redirect to new repair
-  // } else {
-  //   res.render('new-repair-details')
-  // }
+  var repairType = req.query.repairType
 
-  if (repairProblem === 'e')
-    // redirect to call rcc
-      res.redirect('raiserepair/emergency-contact')
-   else if (repairProblem !== ('e' && '0'))
-    // redirect to repair
-      res.render('raiserepair/repair-details')
-   else if (repairProblem === 0)
-      res.redirect('raiserepair/new-repair-details')
-
-  // res.render('raiserepair/repair-details')
-
-})
-
-router.get('/examples/over-18', function (req, res) {
-  // get the answer from the query string (eg. ?over18=false)
-  var over18 = req.query.over18
-
-  if (over18 === 'false') {
+  if (repairType === 'false') {
     // redirect to the relevant page
-    res.redirect('/docs/examples/under-18')
+    res.redirect('/emergency-contact');
   } else {
-    // if over18 is any other value (or is missing) render the page requested
-    res.render('examples/over-18')
+    // if is any other value (or is missing) render the page requested
+    res.render('raiserepair/repair-details');
   }
-})
+
+});
 
 router.get('/raiserepair/search-property', function (req, res) {
   res.render('raiserepair/search-property')
@@ -81,7 +55,7 @@ router.get('/repair_request_start', function (req, res) {
 
 router.get('/repair_request_describe', function (req, res) {
   res.render('repair_request_describe', {'items' : items});
-
+  // pass data into the view
   function getJson(req, res, next) {
     res.send(items);
   }

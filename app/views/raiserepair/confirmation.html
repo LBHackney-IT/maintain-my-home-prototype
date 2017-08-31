@@ -8,27 +8,31 @@
 
 <main id="content" role="main">
   <div class="grid-row">
+
     <div class="column-two-thirds">
       <h1 class="heading-large">
         Maintain My Home
         <span class="heading-secondary">Report a repair</span>
       </h1>
-
       <h2>Thank you for submitting your repair</h2>
-
     </div>
+
 
     <div class="column-one-third">
       <aside role="submited-steps">
-        <h6 class="heading-medium">Steps completed</h6>
-        <p class="heading-small">1. Step</p>
-        <p>Name: {{ data ['full-name-f1'] }}</p>
-        <p>Address: {{ data ['postcode'] }}</p>
+        <h6 class="heading-medium">Steps completed 4/4</h6>
+        <p class="heading-small">1. Repair title</p>
+        <p>Title: {{ data ['repairProblem'] }}</p>
+        <p class="heading-small">2. Repair details</p>
+        <p>details: {{ data [''] }}</p>
+        <p class="heading-small">3. Property address</p>
+        <p>Address: {{ data [''] }}</p>
 
         <hr>
       </aside>
 
     </div>
+
   </div>
 </main>
 

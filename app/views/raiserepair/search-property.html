@@ -19,10 +19,7 @@
           <h2 class="heading-medium">
             Please provide your address
           </h2>
-            <div class="form-group">
-              <label class="form-label" for="full-name-f1">Full name</label>
-              <input class="form-control" id="full-name-f1" type="text" name="full-name-f1">
-            </div>
+
             <div class="form-group">
               <label class="form-label" for="postcode">
                 Postcode
@@ -34,6 +31,7 @@
               </label>
               <input class="form-control" id="postcode" type="text" name="postcode">
             </div>
+
             <div class="form-group">
               <input class="button" type="submit" value="Save and continue">
             </div>
@@ -50,11 +48,11 @@
 
     <div class="column-one-third">
       <aside role="submited-steps">
-        <h6 class="heading-medium">Steps completed</h6>
-        <p class="heading-small">1. Repair title</p>
+        <h3 class="heading-large"><span class="heading-secondary">Steps completed 3/4</span></h3>
+        <p class="heading-small">1. Repair problem</p>
         <p>Title: {{ data ['repairProblem'] }}</p>
         <p class="heading-small">2. Repair details</p>
-        <p>details: {{ data [''] }}</p>
+        <p>Details: {{ data ['repair-notes'] }}</p>
 
 
         <hr>

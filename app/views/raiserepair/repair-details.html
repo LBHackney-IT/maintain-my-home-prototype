@@ -23,7 +23,7 @@
           <div class="form-group">
             <fieldset class="inline">
 
-              <legend class="visuallyhidden">Where is the problem?</legend>
+              <legend class="visuallyhidden">Where is the repair?</legend>
 
               <div class="multiple-choice">
                 <input id="repair-location-kitchen" type="radio" name="repair-location" value="kitchen">
@@ -60,36 +60,34 @@
 
         </div>
         <div class="form-group">
-          <label class="form-label" for="repair-title">What is the problem?</label>
-          <input class="form-control" id="repair-title" type="text" name="repair-title">
+
+          <input class="form-control form-control-3-4" id="repair-title" type="text" name="repair-title">
         </div>
 
         <div class="form-group">
-          <label class="form-label" for="repair-keyword">What is the problem? Search by keywords</label>
-          <input class="form-control" id="repair-keyword" type="text" name="repair-keyword" value="" maxlength="200">
-        </div>
-        <select id="results"></select>
-        <div class="form-group">
           <label class="form-label" for="repair-notes">
-            Additional notes
+            Additional notes <span class="small">(optional)</span>
           </label>
           <textarea class="form-control form-control-3-4" name="repair-notes" id="repair-notes" rows="5"></textarea>
         </div>
 
-        <div class="question" id="repair-photo">
-          <label for="repair-photo">
-              <span class="question-heading">
-                Please upload a photo
-              </span>
-          </label>
-          <span class="question-optional">
-            <strong>Optional</strong>
-          </span>
-          <input
-            type="file"
-            name="repair-photo"
-            id="repair-photo"
-            class="file-upload-input"/>
+        <div class="form-group">
+          <div class="question" id="repair-photo">
+            <label for="repair-photo">
+                <span class="question-heading">
+                  Please upload a photo
+                </span>
+            </label>
+            <span class="question-optional">
+              <strong>(optional)</strong>
+            </span>
+            <br>
+            <input
+              type="file"
+              name="repair-photo"
+              id="repair-photo"
+              class="file-upload-input"/>
+          </div>
         </div>
 
         <div class="form-group inline">
@@ -107,9 +105,9 @@
 
     <div class="column-one-third">
       <aside role="submited-steps">
-        <h6 class="heading-medium">Steps completed</h6>
-        <p class="heading-small">1. Repair title</p>
-        <p>Repair problem: {{ data ['repairProblem'] }}</p>
+        <h6 class="heading-medium heading-secondary">Steps completed 2/4</h6>
+        <p class="heading-small">1. Repair problem</p>
+        <p>Title: {{ data ['repairType'] }}</p>
 
         <!-- {% for item in items %}
         <p> {{ item.name }} </p>
@@ -121,38 +119,4 @@
   </div>
 </main>
 
-{% endblock %}
-
-{% block scripts %}
-  {% include "includes/scripts.html" %}
-  {% block page_scripts %}
-
-  <script>
-    $(document).ready(function(){
-        $.ajaxSetup({ cache: false });
-        $('#repair-keyword').keyup(function(){
-          $('#results').html('');
-          $('#repair-keyword').val('');
-          var searchField = $('#repair-keyword').val();
-          var expression = new RegExp(searchField, "i");
-
-          $.getJSON('../public/javascripts/repairItems.json', function(data) {
-            $.each(data.repairItems, function(key, value){
-              // console.log(value.name);
-              if (value.name.search(expression) !=1 ) {
-                $('#results').append('<option value=" ' + value.name + ' ">' + value.name + '</option>')
-              }
-            })
-          });
-        });
-        $('#results').on('click', 'li', function() {
-          var click_text = $(this).text().split('|');
-          $('#repair-keyword').val($.trim(click_text[0]));
-          $('#result').html();
-        });
-
-      });
-  </script>
-
-  {% endblock %}
 {% endblock %}
