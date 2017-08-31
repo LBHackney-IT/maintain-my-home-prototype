@@ -14,26 +14,47 @@
         Maintain My Home
         <span class="heading-secondary">Report a repair</span>
       </h1>
-      <h2>Thank you for submitting your repair</h2>
+      <h2 class="heading-medium">Thank you for submitting your repair</h2>
+      <p>Your repair status tracking number is <strong class="bold-small"> AY-983-788</strong> and it has been sent to your phone and email.</p>
+
+      <p>We will send you an email and text message remainder one day before your repair appointment is due.</p>
+
+    </div>
+    </div>
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <h3 class="heading-large"><span class="heading-secondary">Repair summary</span></h3>
+      </div>
+    </div>
+    <div class="grid-row">
+      <div class="column-one-half">
+        <p class="heading-small">1. Repair</p>
+        <p>Type: {{ data ['commonRepair'] }}</p>
+        <p>Description: {{ data ['repair-notes'] }}</p>
+      </div>
+      <div class="column-one-half">
+        <p class="heading-small">2. Address</p>
+        <p>Postcode: {{ data ['postcode'] }}</p>
+        <p>Address: {{ data [''] }}</p>
+      </div>
     </div>
 
-
-    <div class="column-one-third">
-      <aside role="submited-steps">
-        <h6 class="heading-medium">Steps completed 4/4</h6>
-        <p class="heading-small">1. Repair title</p>
-        <p>Title: {{ data ['repairProblem'] }}</p>
-        <p class="heading-small">2. Repair details</p>
-        <p>details: {{ data [''] }}</p>
-        <p class="heading-small">3. Property address</p>
-        <p>Address: {{ data [''] }}</p>
-
-        <hr>
-      </aside>
-
+    <div class="grid-row">
+      <div class="column-one-half">
+        <p class="heading-small">3. Appointment date & time</p>
+        <p>Date: Wednesday 23 September 2017</p>
+        <p>Time: afternoon, 12pm - 5pm</p>
+      </div>
+      <div class="column-one-half">
+        <p class="heading-small">4. Contact details</p>
+        <p>Full name: {{ data ['full-name'] }}</p>
+        <p>Phone: {{ data ['contact-phone'] }}</p>
+        <p>Email: {{ data ['contact-email'] }}</p>
+      </div>
     </div>
 
   </div>
+
 </main>
 
 {% endblock %}

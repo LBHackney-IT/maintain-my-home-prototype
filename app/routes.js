@@ -44,6 +44,10 @@ router.get('/raiserepair/book-appointment', function (req, res) {
   res.render('raiserepair/book-appointment')
 });
 
+router.get('/raiserepair/book-appointment-contact', function (req, res) {
+  res.render('raiserepair/book-appointment-contact')
+});
+
 router.get('/raiserepair/confirmation', function (req, res) {
   res.render('raiserepair/confirmation')
 });

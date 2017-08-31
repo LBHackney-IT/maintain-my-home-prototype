@@ -17,64 +17,109 @@
         Book a repair appointment
       </h2>
       <div class="grid-row">
-        <div class="column-one-half">
-          <h3>Please choose one of the availabe dates</h3>
-          <p> >>> calendar here <<< </p>
-        </div>
-        <div class="column-one-half">
-          <h3>Now choose a time slot</h3>
-          <p> >>> time slots here <<< </p>
+        <div class="column-two-thirds">
+          <h3 class="heading-small">Choose a time slot</h3>
+          <div class="form-group">
+            <fieldset class="">
 
-          <h3>Your chosen time for appointment</h3>
-          <p> >>> chosen date and time slot here <<< </p>
+              <legend class="visuallyhidden">Choose a time slot</legend>
+
+              <div class="multiple-choice">
+                <input id="morning" type="radio" name="timeSlot" value="morning">
+                <label for="morning">morning, 8am - 12pm</label>
+              </div>
+
+              <div class="multiple-choice">
+                <input id="morning" type="radio" name="timeSlot" value="afternoon">
+                <label for="morning">afternoon, 12pm - 5pm</label>
+              </div>
+
+              <div class="multiple-choice">
+                <input id="schoolRun" type="checkbox" name="schoolRun" value="schoolRun">
+                <label for="schoolRun">Avoid school run</label>
+              </div>
+
+            </fieldset>
+          </div>
+
         </div>
+        <div class="column-two-thirds">
+          <h3 class="heading-small">Choose one of the available dates</h3>
+          <div style="padding: 20px 20px;border: 2px solid #666;" id="calendar">
+            <header style="padding-bottom: 10px;">
+              <button class="inline">«</button>
+              <span>September 2017</span>
+              <button>»</button>
+            </header>
+          <table>
+            <tr>
+              <td>S</td>
+              <td>M</td>
+              <td>T</td>
+              <td>W</td>
+              <td>Th</td>
+              <td>F</td>
+              <td>S</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>7</td>
+              <td>8</td>
+              <td>9</td>
+              <td>10</td>
+              <td>11</td>
+              <td>12</td>
+            </tr>
+            <tr>
+              <td>13</td>
+              <td>14</td>
+              <td>15</td>
+              <td style="background: #d3d3d3;" class="selected"><a  class="date" href="#">16</a></td>
+              <td style="background: #d3d3d3;" class="selected"><a  class="date" href="#">17</a></td>
+              <td>18</td>
+              <td>19</td>
+            </tr>
+            <tr>
+              <td>20</td>
+              <td style="background: #d3d3d3;" class="selected"><a  class="date" href="#">21</a></td>
+              <td style="background: #d3d3d3;" class="selected"><a  class="date" href="#">22</a></td>
+              <td style="background: #d3d3d3;" class="selected"><a  class="date" href="#">23</a></td>
+              <td>24</td>
+              <td>25</td>
+              <td>26</td>
+            </tr>
+            <tr>
+              <td>27</td>
+              <td>28</td>
+              <td>29</td>
+              <td>30</td>
+              <td>31</td>
+              <td></td>
+              <td></td>
+            </tr>
+          </table>
+          </div>
+        </div>
+        <div class="column-two-thirds">
+          <h3 class="heading-medium">Your chosen time for appointment</h3>
+          <p>Wednesday 23 September 2017</p>
+          <p>12pm - 5pm</p>
+        </div>
+
       </div>
 
-      <h2 class="heading-medium">
-        Please provide your contact details
-      </h2>
-      <p>Prior to the appintment we will send a remainder and a tracking number for the reapir</p>
-
-      <div class="form-group">
-        <label class="form-label" for="full-name">Full name</label>
-        <input class="form-control" id="full-name" type="text" name="full-name">
-      </div>
-
-      <form>
+      <form action="/raiserepair/book-appointment-contact" method="post" class="form">
         <div class="form-group">
-          <fieldset>
-
-            <legend>
-              <h1 class="heading-medium">
-                How do you want to be contacted?
-              </h1>
-            </legend>
-
-            <div class="multiple-choice" data-target="contact-by-phone">
-              <input id="example-contact-by-phone" type="checkbox" name="radio-contact-group" value="No">
-              <label for="example-contact-by-phone">Phone</label>
-            </div>
-            <div class="panel panel-border-narrow js-hidden" id="contact-by-phone">
-              <label class="form-label" for="contact-phone">Phone number</label>
-              <input class="form-control" name="contact-phone" type="text" id="contact-phone">
-            </div>
-
-            <div class="multiple-choice" data-target="contact-by-email">
-              <input id="example-contact-by-email" type="checkbox" name="radio-contact-group" value="Yes">
-              <label for="example-contact-by-email">Email</label>
-            </div>
-            <div class="panel panel-border-narrow js-hidden" id="contact-by-email">
-              <label class="form-label" for="contact-email">Email address</label>
-              <input class="form-control" name="contact-email" type="text" id="contact-email">
-            </div>
-
-          </fieldset>
-        </div>
-      </form>
-
-      <form action="/raiserepair/confirmation" method="post" class="form">
-        <div class="form-group">
-          <input class="button" type="submit" value="Book appointment">
+          <input class="button" type="submit" value="Continue booking">
         </div>
       </form>
 
@@ -82,15 +127,13 @@
 
     <div class="column-one-third">
       <aside role="submited-steps">
-        <h6 class="heading-medium">Steps completed 3/4</h6>
-        <p class="heading-small">1. Repair title</p>
-        <p>Title: {{ data ['repairProblem'] }}</p>
-        <p class="heading-small">2. Repair details</p>
-        <p>details: {{ data [''] }}</p>
-        <p class="heading-small">3. Property address</p>
+        <h3 class="heading-large"><span class="heading-secondary">Steps completed 2/3</span></h3>
+        <p class="heading-small">1. Repair</p>
+        <p>Type: {{ data ['commonRepair'] }}</p>
+        <p>Description: {{ data ['repair-notes'] }}</p>
+        <p class="heading-small">2. Address</p>
+        <p>Postcode: {{ data ['postcode'] }}</p>
         <p>Address: {{ data [''] }}</p>
-
-        <hr>
       </aside>
 
     </div>

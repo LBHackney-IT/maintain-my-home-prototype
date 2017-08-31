@@ -15,107 +15,105 @@
       </h1>
 
       <form action="/raiserepair/search-property" method="post" class="form">
+        <h2 class="heading-medium">
+          Please choose a repair you want to report
+        </h2>
+        <p>These are repairs you can currently submit online</p>
+
         <div class="form-group">
-          <h2 class="heading-medium">
-            Where is the problem?
-          </h2>
+          <fieldset>
+
+            <legend class="visuallyhidden">Please choose a repair you want to report</legend>
+
+              <div class="multiple-choice" data-target="show-me">
+                <input id="kitchenSinkBlocked" type="radio" name="commonRepair" value="kitchenSinkBlocked">
+                <label for="kitchenSinkBlocked">Unlock kitchen sink</label>
+              </div>
+
+            <div class="multiple-choice" data-target="show-me">
+              <input id="unlockBath" type="radio" name="commonRepair" value="unlockBath">
+              <label for="unlockBath">Unlock bath</label>
+            </div>
+
+            <div class="multiple-choice" data-target="show-me">
+              <input id="tapDripping" type="radio" name="commonRepair" value="tapDripping">
+              <label for="tapDripping">Tap dripping</label>
+            </div>
+
+            <div class="multiple-choice" data-target="show-me">
+              <input id="doorEase" type="radio" name="commonRepair" value="doorEase">
+              <label for="doorEase">Ease and adjustmemnt of doors</label>
+            </div>
+
+            <div class="multiple-choice" data-target="show-me">
+              <input id="doorHandle" type="radio" name="commonRepair" value="doorHandle">
+              <label for="doorHandle">Fix door handle</label>
+            </div>
+
+            <div class="multiple-choice" data-target="show-not-on-the-list">
+              <input id="none" type="radio" name="commonRepair" value="none">
+              <label for="none">None of the above</label>
+            </div>
+
+          </fieldset>
+        </div>
+
+        <div id="show-me" class="js-hidden">
+          <div class="form-group">
+            <label class="form-label" for="repair-notes">
+              Additional description <span class="small">(optional)</span>
+            </label>
+            <textarea class="form-control form-control-3-4" name="repair-notes" id="repair-notes" rows="5"></textarea>
+          </div>
 
           <div class="form-group">
-            <fieldset class="inline">
-
-              <legend class="visuallyhidden">Where is the repair?</legend>
-
-              <div class="multiple-choice">
-                <input id="repair-location-kitchen" type="radio" name="repair-location" value="kitchen">
-                <label for="repair-location-kitchen">Kitchen</label>
-              </div>
-
-              <div class="multiple-choice">
-                <input id="repair-location-bathroom" type="radio" name="repair-location" value="bathroom">
-                <label for="repair-location-bathroom">Bathroom</label>
-              </div>
-
-              <div class="multiple-choice">
-                <input id="repair-location-toilet" type="radio" name="repair-location" value="toilet">
-                <label for="repair-location-toilet">Toilet</label>
-              </div>
-
-              <div class="multiple-choice">
-                <input id="repair-location-bedroom" type="radio" name="repair-location" value="toilet">
-                <label for="repair-location-bedroom">Bedroom</label>
-              </div>
-
-              <div class="multiple-choice">
-                <input id="repair-location-livingroom" type="radio" name="repair-location" value="livingroom">
-                <label for="repair-location-livingroom">Living room</label>
-              </div>
-
-              <div class="multiple-choice">
-                <input id="repair-location-outside" type="radio" name="repair-outside" value="outside">
-                <label for="repair-location-livingroom">Outside</label>
-              </div>
-
-            </fieldset>
+            <div class="question" id="repair-photo">
+              <label for="repair-photo">
+                  <span class="question-heading">
+                    Please upload a photo
+                  </span>
+              </label>
+              <span class="question-optional">
+                <strong>(optional)</strong>
+              </span>
+              <br>
+              <input
+                type="file"
+                name="repair-photo"
+                id="repair-photo"
+                class="file-upload-input"/>
+            </div>
           </div>
-
-        </div>
-        <div class="form-group">
-
-          <input class="form-control form-control-3-4" id="repair-title" type="text" name="repair-title">
-        </div>
-
-        <div class="form-group">
-          <label class="form-label" for="repair-notes">
-            Additional notes <span class="small">(optional)</span>
-          </label>
-          <textarea class="form-control form-control-3-4" name="repair-notes" id="repair-notes" rows="5"></textarea>
-        </div>
-
-        <div class="form-group">
-          <div class="question" id="repair-photo">
-            <label for="repair-photo">
-                <span class="question-heading">
-                  Please upload a photo
-                </span>
-            </label>
-            <span class="question-optional">
-              <strong>(optional)</strong>
-            </span>
-            <br>
-            <input
-              type="file"
-              name="repair-photo"
-              id="repair-photo"
-              class="file-upload-input"/>
+          <div class="form-group inline">
+            <input class="button" type="submit" value="Save and continue">
           </div>
         </div>
 
-        <div class="form-group inline">
-          <input class="button" type="submit" value="Save and continue">
-        </div>
       </form>
 
-      <form action="/raiserepair/cannot-describe-repair" method="post" class="form inline">
-        <div class="form-group inline">
-          <input class="button" type="submit" value="Cannot describe repair">
-        </div>
-      </form>
+      <div id="show-not-on-the-list" class="js-hidden">
+        <form action="/raiserepair/cannot-describe-repair" method="post" class="form inline">
+          <div class="form-group inline">
+            <input class="button" type="submit" value="Continue">
+          </div>
+        </form>
+      </div>
 
     </div>
-
+<!--
     <div class="column-one-third">
       <aside role="submited-steps">
         <h6 class="heading-medium heading-secondary">Steps completed 2/4</h6>
         <p class="heading-small">1. Repair problem</p>
-        <p>Title: {{ data ['repairType'] }}</p>
+        <p>Title: {{ data ['repairType'] }}</p> -->
 
         <!-- {% for item in items %}
         <p> {{ item.name }} </p>
         {% endfor %} -->
-        <hr>
+        <!-- <hr>
       </aside>
+    </div> -->
 
-    </div>
   </div>
 </main>
 
