@@ -48,12 +48,12 @@
 
             <legend class="visuallyhidden">Is your repair one of the following?</legend>
 
-            <div class="multiple-choice">
+            <div class="multiple-choice" data-target="emergency-contact">
               <input id="repairTypeYes" type="radio" name="repairType" value="false">
               <label for="repairTypeYes">Yes</label>
             </div>
 
-            <div class="multiple-choice" data-target="no">
+            <div class="multiple-choice" data-target="regular-repair">
               <input id="repairTypeNo" type="radio" name="repairType" value="true">
               <label for="repairTypeNo">No</label>
             </div>
@@ -61,12 +61,19 @@
           </fieldset>
         </div>
 
-        <div class="form-group">
+        <div id="regular-repair" class="form-group">
           <input type="submit" class="button" value="Continue">
         </div>
 
       </form>
 
+      <div id="emergency-contact" class="js-hidden">
+        <form action="/raiserepair/emergency-contact" method="post" class="form inline">
+          <div class="form-group inline">
+            <input class="button" type="submit" value="Continue">
+          </div>
+        </form>
+      </div>
 
     </div>
     <!-- Side Column with emergency info -->
