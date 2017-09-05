@@ -8,51 +8,38 @@
 
 <main id="content" role="main">
   <div class="grid-row">
-
     <div class="column-two-thirds">
       <h1 class="heading-large">
         Maintain My Home
-        <span class="heading-secondary">Report a repair</span>
+        <span class="heading-secondary">Request a repair</span>
       </h1>
-      <h2 class="heading-medium">Thank you for submitting your repair</h2>
-      <p>Your repair status tracking number is <strong class="bold-small"> AY-983-788</strong> and it has been sent to your phone and email.</p>
+      <h2 class="heading-medium">Thank you</h2>
+      <p>Your reference number is <strong class="bold-small"> AY-983-788</strong>. We have sent it to your phone.<p>
 
-      <p>We will send you an email and text message remainder one day before your repair appointment is due.</p>
+      <p>We will send you a text message reminder one day before your appointment.</p>
 
+      <p>If you need to change your appointment, please call our repair centre on xxxx.<p>
     </div>
-    </div>
-    <div class="grid-row">
-      <div class="column-two-thirds">
-        <h3 class="heading-large"><span class="heading-secondary">Repair summary</span></h3>
-      </div>
-    </div>
-    <div class="grid-row">
-      <div class="column-one-half">
-        <p class="heading-small">1. Repair</p>
-        <p>Type: {{ data ['commonRepair'] }}</p>
-        <p>Description: {{ data ['repair-notes'] }}</p>
-      </div>
-      <div class="column-one-half">
-        <p class="heading-small">2. Address</p>
-        <p>Postcode: {{ data ['postcode'] }}</p>
-        <p>Address: {{ data [''] }}</p>
-      </div>
-    </div>
+  </div>
 
-    <div class="grid-row">
-      <div class="column-one-half">
-        <p class="heading-small">3. Appointment date & time</p>
-        <p>Date: Wednesday 23 September 2017</p>
-        <p>Time: afternoon, 12pm - 5pm</p>
-      </div>
-      <div class="column-one-half">
-        <p class="heading-small">4. Contact details</p>
-        <p>Full name: {{ data ['full-name'] }}</p>
-        <p>Phone: {{ data ['contact-phone'] }}</p>
-        <p>Email: {{ data ['contact-email'] }}</p>
-      </div>
-    </div>
 
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h2 class="heading-medium">Summary</h2>
+
+      <p class="heading-small">Appointment</p>
+      <p>Date: Wednesday 23 September 2017</p>
+      <p>Time: afternoon, 12pm - 5pm</p>
+
+      <p class="heading-small">Your details</p>
+      <p>Name: {{ data ['full-name'] }}</p>
+      <p>Phone: {{ data ['contact-phone'] }}</p>
+      <p>Address: {{ data [''] }}</p>
+
+      <p class="heading-small">Problem</p>
+      <p>Type: {{ data ['commonRepair'] }}</p>
+      <p>Description: {{ data ['repair-notes'] }}</p>
+    </div>
   </div>
 
 </main>

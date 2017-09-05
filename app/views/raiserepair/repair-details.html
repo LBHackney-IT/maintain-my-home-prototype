@@ -11,14 +11,14 @@
     <div class="column-two-thirds">
       <h1 class="heading-large">
         Maintain My Home
-        <span class="heading-secondary">Report a repair</span>
+        <span class="heading-secondary">Request a repair</span>
       </h1>
 
       <form action="/raiserepair/search-property" method="post" class="form">
         <h2 class="heading-medium">
-          Please choose a repair you want to report
+          Is your problem one of the following?
         </h2>
-        <p>These are repairs you can currently submit online</p>
+        <!-- <p>These are repairs you can currently submit online</p> -->
 
         <div class="form-group">
           <fieldset>
@@ -26,33 +26,30 @@
             <legend class="visuallyhidden">Please choose a repair you want to report</legend>
 
               <div class="multiple-choice" data-target="show-me">
-                <input id="kitchenSinkBlocked" type="radio" name="commonRepair" value="kitchenSinkBlocked">
-                <label for="kitchenSinkBlocked">Unlock kitchen sink</label>
+                <input id="kitchenSinkBlocked" type="radio" name="commonRepair" value="Blocked sink">
+                <label for="kitchenSinkBlocked">Blocked sink</label>
               </div>
 
             <div class="multiple-choice" data-target="show-me">
-              <input id="unlockBath" type="radio" name="commonRepair" value="unlockBath">
-              <label for="unlockBath">Unlock bath</label>
+              <input id="unlockBath" type="radio" name="commonRepair" value="Blocked bath">
+              <label for="unlockBath">Blocked bath</label>
             </div>
 
             <div class="multiple-choice" data-target="show-me">
-              <input id="tapDripping" type="radio" name="commonRepair" value="tapDripping">
-              <label for="tapDripping">Tap dripping</label>
+              <input id="tapDripping" type="radio" name="commonRepair" value="Dripping tap">
+              <label for="tapDripping">Dripping tap</label>
             </div>
 
             <div class="multiple-choice" data-target="show-me">
-              <input id="doorEase" type="radio" name="commonRepair" value="doorEase">
-              <label for="doorEase">Ease and adjustmemnt of doors</label>
+              <input id="doorEase" type="radio" name="commonRepair" value="Door is damaged, loose, stiff or stuck">
+              <label for="doorEase">Door is damaged, loose, stiff or stuck</label>
             </div>
 
-            <div class="multiple-choice" data-target="show-me">
-              <input id="doorHandle" type="radio" name="commonRepair" value="doorHandle">
-              <label for="doorHandle">Fix door handle</label>
-            </div>
+            <div class="multiple-choice"></div>
 
             <div class="multiple-choice" data-target="show-not-on-the-list">
               <input id="none" type="radio" name="commonRepair" value="none">
-              <label for="none">None of the above</label>
+              <label for="none">BUTTON: It's something else</label>
             </div>
 
           </fieldset>
@@ -61,7 +58,7 @@
         <div id="show-me" class="js-hidden">
           <div class="form-group">
             <label class="form-label" for="repair-notes">
-              Additional description <span class="small">(optional)</span>
+              Tell us more about this problem, for example, location of problem <span class="small">(optional)</span>
             </label>
             <textarea class="form-control form-control-3-4" name="repair-notes" id="repair-notes" rows="5"></textarea>
           </div>
@@ -70,7 +67,7 @@
             <div class="question" id="repair-photo">
               <label for="repair-photo">
                   <span class="question-heading">
-                    Please upload a photo
+                    Take a photo
                   </span>
               </label>
               <span class="question-optional">

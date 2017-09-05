@@ -11,24 +11,18 @@
     <div class="column-two-thirds">
       <h1 class="heading-large">
         Maintain My Home
-        <span class="heading-secondary">Report a repair</span>
+        <span class="heading-secondary">Request a repair</span>
       </h1>
-        <p class="lede">We provide a housing repairs service for all our council tenants.</p>
 
       <form action="/raiserepair/book-appointment" method="post" class="form">
         <div class="form-group">
           <h2 class="heading-medium">
-            Please provide your address
+             What is your address?
           </h2>
 
             <div class="form-group">
               <label class="form-label" for="postcode">
-                Postcode
-                <span class="form-hint small">
-                  Search your address by postcode
-                  <br>
-                  For example, ‘E2 7NX’.
-                </span>
+                Search for your address by postcode
               </label>
               <input class="form-control" id="postcode" type="text" name="postcode">
             </div>
@@ -41,26 +35,26 @@
       </form>
 
       <form action="/raiserepair/cannot-find-property" method="post" class="form inline">
-        <h2 class="heading-medium">
-          Cannot find adreess ?
-        </h2>
+        <!-- <h2 class="heading-medium"> -->
+        <!--   Cannot find address ? -->
+        <!-- </h2> -->
 
         <div class="form-group inline">
-          <input class="button" type="submit" value="Yes">
+          <input class="button" type="submit" value="My address isn't here">
         </div>
       </form>
 
     </div>
 
-    <div class="column-one-third">
-      <aside role="submited-steps">
-        <h3 class="heading-large"><span class="heading-secondary">Steps completed 1/3</span></h3>
-        <p class="heading-small">1. Repair</p>
-        <p>Type: {{ data ['commonRepair'] }}</p>
-        <p>Description: {{ data ['repair-notes'] }}</p>
-      </aside>
+    <!-- <div class="column-one-third"> -->
+    <!--   <aside role="submited-steps"> -->
+    <!--     <h3 class="heading-large"><span class="heading-secondary">Steps completed 1/3</span></h3> -->
+    <!--     <p class="heading-small">1. Repair</p> -->
+    <!--     <p>Type: {{ data ['commonRepair'] }}</p> -->
+    <!--     <p>Description: {{ data ['repair-notes'] }}</p> -->
+    <!--   </aside> -->
 
-    </div>
+    <!-- </div> -->
   </div>
 </main>
 
