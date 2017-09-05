@@ -9,6 +9,8 @@
 <main id="content" role="main">
   <div class="grid-row">
     <div class="column-two-thirds">
+      <form action="/raiserepair/confirmation" method="post" class="form">
+
       <h1 class="heading-large">
         Maintain My Home
         <span class="heading-secondary">Request a repair</span>
@@ -22,46 +24,14 @@
         <label class="form-label" for="full-name">Name</label>
         <input class="form-control" id="full-name" type="text" name="full-name">
       </div>
+
       <div class="form-group">
         <label class="form-label" for="telephone-number">Mobile number</label>
         <input class="form-control" id="telephone-number" type="text" name="telephone-number">
       </div>
 
-      <!-- <form> -->
-      <!--   <div class="form-group"> -->
-      <!--     <fieldset> -->
-
-      <!--       <legend> -->
-      <!--         <h1 class="heading-medium"> -->
-      <!--           How do you want to be contacted? -->
-      <!--         </h1> -->
-      <!--       </legend> -->
-
-      <!--       <div class="multiple-choice" data-target="contact-by-phone"> -->
-      <!--         <input id="example-contact-by-phone" type="checkbox" name="radio-contact-group" value="No"> -->
-      <!--         <label for="example-contact-by-phone">Phone</label> -->
-      <!--       </div> -->
-      <!--       <div class="panel panel-border-narrow js-hidden" id="contact-by-phone"> -->
-      <!--         <label class="form-label" for="contact-phone">Phone number</label> -->
-      <!--         <input class="form-control" name="contact-phone" type="text" id="contact-phone"> -->
-      <!--       </div> -->
-
-      <!--       <div class="multiple-choice" data-target="contact-by-email"> -->
-      <!--         <input id="example-contact-by-email" type="checkbox" name="radio-contact-group" value="Yes"> -->
-      <!--         <label for="example-contact-by-email">Email</label> -->
-      <!--       </div> -->
-      <!--       <div class="panel panel-border-narrow js-hidden" id="contact-by-email"> -->
-      <!--         <label class="form-label" for="contact-email">Email address</label> -->
-      <!--         <input class="form-control" name="contact-email" type="text" id="contact-email"> -->
-      <!--       </div> -->
-
-      <!--     </fieldset> -->
-      <!--   </div> -->
-      <!-- </form> -->
-
       <p>We will send you a reminder before your appointment.<p>
 
-      <form action="/raiserepair/confirmation" method="post" class="form">
         <div class="form-group">
           <input class="button" type="submit" value="Confirm booking">
         </div>
@@ -69,21 +39,20 @@
 
     </div>
 
-    <!-- <div class="column-one-third"> -->
-    <!--   <aside role="submited-steps"> -->
-    <!--     <h3 class="heading-large"><span class="heading-secondary">Steps completed 2/3</span></h3> -->
-    <!--     <p class="heading-small">1. Repair</p> -->
-    <!--     <p>Type: {{ data ['commonRepair'] }}</p> -->
-    <!--     <p>Description: {{ data ['repair-notes'] }}</p> -->
-    <!--     <p class="heading-small">2. Address</p> -->
-    <!--     <p>Postcode: {{ data ['postcode'] }}</p> -->
-    <!--     <p>Address: {{ data [''] }}</p> -->
-    <!--     <p class="heading-small">3. Appointment date & time</p> -->
-    <!--     <p>Date: Wednesday 23 September 2017</p> -->
-    <!--     <p>Time: afternoon, 12pm - 5pm</p> -->
-    <!--   </aside> -->
+    <div class="column-one-third">
+      <aside role="submited-steps">
+        <h3 class="heading-large"><span class="heading-secondary">Your report</span></h3>
+        <p class="heading-small">Problem</p>
+        <p>Type: {{ data['commonRepair'] }}</p>
+        <p>Description: {{ data['repair-notes'] }}</p>
 
-    <!-- </div> -->
+        <p class="heading-small">Address</p>
+        <p>{{ data ['address'] }}</p>
+
+        <p class="heading-small">Appointment</p>
+        <p>Wednesday 23 September 2017<br>Afternoon (12pm - 5pm)</p>
+      </aside>
+    </div>
   </div>
 </main>
 

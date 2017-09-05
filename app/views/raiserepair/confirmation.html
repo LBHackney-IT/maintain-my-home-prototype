@@ -18,7 +18,7 @@
 
       <p>We will send you a text message reminder one day before your appointment.</p>
 
-      <p>If you need to change your appointment, please call our repair centre on xxxx.<p>
+      <p class="bold">If you need to change your appointment, please call our repair centre<br>on <span itemprop="telephone"><strong><a href="tel:+02083563691">020 8356 3691</a></strong>.<p>
     </div>
   </div>
 
@@ -33,8 +33,8 @@
 
       <p class="heading-small">Your details</p>
       <p>Name: {{ data ['full-name'] }}</p>
-      <p>Phone: {{ data ['contact-phone'] }}</p>
-      <p>Address: {{ data [''] }}</p>
+      <p>Phone: {{ data ['telephone-number'] }}</p>
+      <p>Address: {{ data ['address'] }}</p>
 
       <p class="heading-small">Problem</p>
       <p>Type: {{ data ['commonRepair'] }}</p>
