@@ -16,85 +16,41 @@
 
       <form action="/raiserepair/search-property" method="post" class="form">
         <h2 class="heading-medium">
-          Is your problem one of the following?
+          What can you tell us about this problem?
         </h2>
 
         <div class="form-group">
-          <fieldset>
-
-            <legend class="visuallyhidden">Please choose a repair you want to report</legend>
-
-              <div class="multiple-choice" data-target="show-me">
-                <input id="kitchenSinkBlocked" type="radio" name="commonRepair" value="Blocked sink">
-                <label for="kitchenSinkBlocked">Blocked sink</label>
-              </div>
-
-            <div class="multiple-choice" data-target="show-me">
-              <input id="unlockBath" type="radio" name="commonRepair" value="Blocked bath">
-              <label for="unlockBath">Blocked bath</label>
-            </div>
-
-            <div class="multiple-choice" data-target="show-me">
-              <input id="tapDripping" type="radio" name="commonRepair" value="Dripping tap">
-              <label for="tapDripping">Dripping tap</label>
-            </div>
-
-            <div class="multiple-choice" data-target="show-me">
-              <input id="doorEase" type="radio" name="commonRepair" value="Door is damaged, loose, stiff or stuck">
-              <label for="doorEase">Door is damaged, loose, stiff or stuck</label>
-            </div>
-
-            <div class="multiple-choice"></div>
-
-            <div class="multiple-choice" data-target="show-not-on-the-list">
-              <input id="none" type="radio" name="commonRepair" value="none">
-              <label for="none">No, it's something else</label>
-            </div>
-
-          </fieldset>
+          <label class="form-label" for="repair-notes">
+            Tell us more about this problem, for example, location of problem <span class="small">(optional)</span>
+          </label>
+          <textarea class="form-control form-control-3-4" name="repair-notes" id="repair-notes" rows="5"></textarea>
         </div>
 
-        <div id="show-me" class="js-hidden">
-          <div class="form-group">
-            <label class="form-label" for="repair-notes">
-              Tell us more about this problem, for example, location of problem <span class="small">(optional)</span>
-            </label>
-            <textarea class="form-control form-control-3-4" name="repair-notes" id="repair-notes" rows="5"></textarea>
-          </div>
-
-          <div class="form-group">
-            <div class="question" id="repair-photo">
-              <label for="repair-photo">
-                  <span class="question-heading">
-                    Take a photo
-                  </span>
-              </label>
-              <span class="question-optional">
-                <strong>(optional)</strong>
+        <div class="form-group">
+          <div class="question" id="repair-photo">
+            <label for="repair-photo">
+              <span class="question-heading">
+                Take a photo
               </span>
-              <br>
-              <input
-                type="file"
-                name="repair-photo"
-                id="repair-photo"
-                class="file-upload-input"/>
-            </div>
+            </label>
+            <span class="question-optional">
+              <strong>(optional)</strong>
+            </span>
+            <br>
+            <input
+              type="file"
+              name="repair-photo"
+              id="repair-photo"
+              accept="image/*"
+              class="file-upload-input"/>
           </div>
-          <div class="form-group inline">
-            <input class="button" type="submit" value="Save and continue">
-          </div>
+        </div>
+
+        <div class="form-group inline">
+          <input class="button" type="submit" value="Save and continue">
         </div>
 
       </form>
-
-      <div id="show-not-on-the-list" class="js-hidden">
-        <form action="/raiserepair/cannot-describe-repair" method="post" class="form inline">
-          <div class="form-group inline">
-            <input class="button" type="submit" value="Continue">
-          </div>
-        </form>
-      </div>
-
     </div>
 <!--
     <div class="column-one-third">

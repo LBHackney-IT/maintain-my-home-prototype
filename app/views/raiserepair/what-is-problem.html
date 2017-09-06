@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Hackney - Maintain My Home
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">
+        Maintain My Home
+        <span class="heading-secondary">Request a repair</span>
+      </h1>
+
+      <form action="/raiserepair/repair-details" method="post" class="form">
+        <h2 class="heading-medium">
+          Is your problem one of the following?
+        </h2>
+
+        <div class="form-group">
+          <fieldset>
+
+            <legend class="visuallyhidden">Please choose a repair you want to report</legend>
+
+              <div class="multiple-choice" data-target="show-me">
+                <input id="kitchenSinkBlocked" type="radio" name="commonRepair" value="Blocked sink">
+                <label for="kitchenSinkBlocked">Blocked sink</label>
+              </div>
+
+            <div class="multiple-choice" data-target="show-me">
+              <input id="unlockBath" type="radio" name="commonRepair" value="Blocked bath">
+              <label for="unlockBath">Blocked bath</label>
+            </div>
+
+            <div class="multiple-choice" data-target="show-me">
+              <input id="tapDripping" type="radio" name="commonRepair" value="Dripping tap">
+              <label for="tapDripping">Dripping tap</label>
+            </div>
+
+            <div class="multiple-choice" data-target="show-me">
+              <input id="doorEase" type="radio" name="commonRepair" value="Door is damaged, loose, stiff or stuck">
+              <label for="doorEase">Door is damaged, loose, stiff or stuck</label>
+            </div>
+
+            <div class="multiple-choice"></div>
+
+            <div class="multiple-choice" data-target="show-not-on-the-list">
+              <input id="none" type="radio" name="commonRepair" value="none">
+              <label for="none">No, it's something else</label>
+            </div>
+
+          </fieldset>
+        </div>
+
+        <div id="show-me" class="js-hidden">
+          <div class="form-group inline">
+            <input class="button" type="submit" value="Save and continue">
+          </div>
+        </div>
+
+      </form>
+
+      <div id="show-not-on-the-list" class="js-hidden">
+        <form action="/raiserepair/cannot-describe-repair" method="post" class="form inline">
+          <div class="form-group inline">
+            <input class="button" type="submit" value="Save and continue">
+          </div>
+        </form>
+      </div>
+
+    </div>
+<!--
+    <div class="column-one-third">
+      <aside role="submited-steps">
+        <h6 class="heading-medium heading-secondary">Steps completed 2/4</h6>
+        <p class="heading-small">1. Repair problem</p>
+        <p>Title: {{ data ['repairType'] }}</p> -->
+
+        <!-- {% for item in items %}
+        <p> {{ item.name }} </p>
+        {% endfor %} -->
+        <!-- <hr>
+      </aside>
+    </div> -->
+
+  </div>
+</main>
+
+{% endblock %}

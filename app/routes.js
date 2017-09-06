@@ -14,7 +14,7 @@ router.get('/', function (req, res) {
 // add your routes here
 // Raise repair routes for Maintain My Home Prototype
 
-router.get('/raiserepair/repair-details', function (req, res) {
+router.get('/raiserepair/what-is-problem', function (req, res) {
   // get the answer from the query string
   var repairType = req.query.repairType
 
@@ -23,9 +23,13 @@ router.get('/raiserepair/repair-details', function (req, res) {
     res.redirect('/emergency-contact');
   } else {
     // if is any other value (or is missing) render the page requested
-    res.render('raiserepair/repair-details');
+    res.render('raiserepair/what-is-problem');
   }
 
+});
+
+router.get('/raiserepair/repair-details', function (req, res) {
+  res.render('raiserepair/repair-details')
 });
 
 router.get('/raiserepair/search-property', function (req, res) {

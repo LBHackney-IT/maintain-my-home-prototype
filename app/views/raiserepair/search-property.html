@@ -86,6 +86,13 @@
           $('#address-selection').removeClass('js-hidden');
         });
 
+        $('#postcode').keydown(function(event) {
+          if ( event.which == 13 ) {
+            $('#address-selection').removeClass('js-hidden');
+            event.preventDefault();
+          };
+        });
+
         $.ajaxSetup({ cache: false });
         $('#repair-keyword').keyup(function(){
           $('#results').html('');
