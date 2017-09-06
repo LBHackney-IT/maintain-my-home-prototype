@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Hackney - Maintain My Home
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">
+        Maintain My Home
+        <span class="heading-secondary">Request a repair</span>
+      </h1>
+
+      <form action="/raiserepair/what-is-problem" method="post" class="form">
+        <h2 class="heading-medium">
+          Is your problem one of these?
+        </h2>
+
+        <ul class="list list-bullet">
+          <li>uncontrollable water leak</li>
+          <li>my only toilet is blocked</li>
+          <li>no power</li>
+          <li>water dripping over a power socket or light</li>
+          <li>I cannot access my property</li>
+        </ul>
+
+        <div class="form-group">
+          <fieldset>
+
+            <legend class="visuallyhidden">Is your repair one of the following?</legend>
+
+            <div class="multiple-choice" data-target="emergency-contact">
+              <input id="repairTypeYes" type="radio" name="repairType" value="false">
+              <label for="repairTypeYes">Yes</label>
+            </div>
+
+            <div class="multiple-choice" data-target="regular-repair">
+              <input id="repairTypeNo" type="radio" name="repairType" value="true">
+              <label for="repairTypeNo">No</label>
+            </div>
+
+          </fieldset>
+        </div>
+
+        <div id="regular-repair" class="form-group">
+          <input type="submit" class="button" value="Continue">
+        </div>
+
+      </form>
+
+      <div id="emergency-contact" class="js-hidden">
+        <form action="/raiserepair/emergency-contact" method="post" class="form inline">
+          <div class="form-group inline">
+            <input class="button" type="submit" value="Continue">
+          </div>
+        </form>
+      </div>
+
+    </div>
+    <!-- Side Column with emergency info -->
+    <div class="column-one-third">
+
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

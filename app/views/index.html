@@ -17,8 +17,12 @@
 
       <p>You can use this online service to report the most common problems with your home.</p>
 
+      <p>Requesting a repair should take around 5 minutes.</p>
+
+      <p><a href="/raiserepair/start/" class="button button-start">Start</a></p>
+
+
       <aside role="emergency information">
-        <br>
         <div role="notice" aria-label="Smell Gas Help" class="notice help-notice">
           <i class="icon icon-important">
             <span class="visually-hidden">Call</span>
@@ -28,51 +32,6 @@
         </div>
         <br>
       </aside>
-
-      <form action="/raiserepair/what-is-problem" method="post" class="form">
-        <h2 class="heading-medium">
-          Is your problem one of these?
-        </h2>
-
-        <ul class="list list-bullet">
-          <li>uncontrollable water leak</li>
-          <li>my only toilet is blocked</li>
-          <li>no power</li>
-          <li>water dripping over a power socket or light</li>
-          <li>I cannot access my property</li>
-        </ul>
-
-        <div class="form-group">
-          <fieldset>
-
-            <legend class="visuallyhidden">Is your repair one of the following?</legend>
-
-            <div class="multiple-choice" data-target="emergency-contact">
-              <input id="repairTypeYes" type="radio" name="repairType" value="false">
-              <label for="repairTypeYes">Yes</label>
-            </div>
-
-            <div class="multiple-choice" data-target="regular-repair">
-              <input id="repairTypeNo" type="radio" name="repairType" value="true">
-              <label for="repairTypeNo">No</label>
-            </div>
-
-          </fieldset>
-        </div>
-
-        <div id="regular-repair" class="form-group">
-          <input type="submit" class="button" value="Continue">
-        </div>
-
-      </form>
-
-      <div id="emergency-contact" class="js-hidden">
-        <form action="/raiserepair/emergency-contact" method="post" class="form inline">
-          <div class="form-group inline">
-            <input class="button" type="submit" value="Continue">
-          </div>
-        </form>
-      </div>
 
     </div>
     <!-- Side Column with emergency info -->

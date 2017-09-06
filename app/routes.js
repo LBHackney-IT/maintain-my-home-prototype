@@ -28,6 +28,10 @@ router.get('/raiserepair/what-is-problem', function (req, res) {
 
 });
 
+router.get('/raiserepair/start', function (req, res) {
+  res.render('raiserepair/start')
+});
+
 router.get('/raiserepair/repair-details', function (req, res) {
   res.render('raiserepair/repair-details')
 });
