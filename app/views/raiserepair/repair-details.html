@@ -16,21 +16,24 @@
 
       <form action="/raiserepair/search-property" method="post" class="form">
         <h2 class="heading-medium">
-          What can you tell us about this problem?
+          Is there anything else we should know about this problem? <span class="small question-optional">(optional)</span>
         </h2>
 
         <div class="form-group">
           <label class="form-label" for="repair-notes">
-            Tell us more about this problem, for example, location of problem <span class="small">(optional)</span>
+            For example:
+            <ul class='list list-bullet'>
+              <li>which rooms are affected?</li>
+            </ul>
           </label>
           <textarea class="form-control form-control-3-4" name="repair-notes" id="repair-notes" rows="5"></textarea>
         </div>
 
         <div class="form-group">
           <div class="question" id="repair-photo">
-            <label for="repair-photo">
+            <label class='h4' for="repair-photo">
               <span class="question-heading">
-                Take a photo
+                Add a photo
               </span>
             </label>
             <span class="question-optional">
