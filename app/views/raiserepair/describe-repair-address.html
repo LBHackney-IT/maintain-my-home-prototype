@@ -1,0 +1,142 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Hackney - Maintain My Home
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">
+        Maintain My Home
+        <span class="heading-secondary">Request a repair</span>
+      </h1>
+
+    <!-- <form action="/raiserepair/describe-repair-confirmation" method="post"  -->
+    <form action="/raiserepair/describe-repair-confirmation" method="post" class="form">
+      <div class="form-group">
+        <h2 class="heading-medium">
+           What is your address?
+        </h2>
+
+        <div class="form-group">
+          <label class="form-label" for="postcode">
+            Search for your address by postcode
+          </label>
+          <input class="form-control" id="postcode" type="text" name="postcode">
+          <a class="button" id="address-selection-button" data-target="address-selection-two">Find my address</a>
+        </div>
+
+        <div class="form-group js-hidden" id="address-selection-two">
+          <div class="multiple-choice">
+            <input id="property1" type="radio" name="address" value="Flat 1, 8 Hoxton Square, N1 6NU">
+            <label for="property1">Flat 1, 8 Hoxton Square, N1 6NU</label>
+          </div>
+          <div class="multiple-choice">
+            <input id="property1" type="radio" name="address" value="Flat 2, 8 Hoxton Square, N1 6NU">
+            <label for="property1">Flat 2, 8 Hoxton Square, N1 6NU</label>
+          </div>
+          <div class="multiple-choice">
+            <input id="property1" type="radio" name="address" value="Flat 4, 8 Hoxton Square, N1 6NU">
+            <label for="property1">Flat 4, 8 Hoxton Square, N1 6NU</label>
+          </div>
+          <div class="multiple-choice">
+            <input id="property1" type="radio" name="address" value="Flat 5, 8 Hoxton Square, N1 6NU">
+            <label for="property1">Flat 5, 8 Hoxton Square, N1 6NU</label>
+          </div>
+          <div class="form-group">
+            <input class="button" type="submit" value="Use this address">
+          </div>
+          <div class="form-group">
+            <a href="/raiserepair/cannot-find-property" class="button">My address isn't here</a>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    </div>
+
+    <div class="column-one-third">
+      <aside role="submited-steps">
+        <h3 class="heading-large"><span class="heading-secondary">Your report</span></h3>
+        <p class="heading-small">Problem</p>
+        <p>Description: {{ data['repair-describe'] }}</p>
+
+      {% if data['repair-describe-photo'] %}
+
+        <p>Photo: {{ data['repair-describe-photo'] }}</p>
+
+      {% endif %}
+        <p class="heading-small">Contact details</p>
+        <p>Full Name: {{ data['full-name'] }}</p>
+        <p>Tel number: {{ data['telephone-number'] }}</p>
+        <p>Available for call:
+
+          {% if data['morningCall'] %}
+            morning,
+          {% endif %}
+
+          {% if data['afternoonCall'] %}
+            afternoon,
+          {% endif %}
+
+          {% if data['schoolRun'] %}
+            avoid school run
+          {% endif %}
+        </p>
+
+      </aside>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+{% block scripts %}
+  {% include "includes/scripts.html" %}
+  {% block page_scripts %}
+
+  <!-- additional scripts here -->
+
+  <script>
+    $(document).ready(function(){
+        $('#address-selection-button').on('click', function() {
+          $('#address-selection-two').removeClass('js-hidden');
+        });
+
+        $('#postcode').keydown(function(event) {
+          if ( event.which == 13 ) {
+            $('#address-selection-two').removeClass('js-hidden');
+            event.preventDefault();
+          };
+        });
+
+        $.ajaxSetup({ cache: false });
+        $('#repair-keyword').keyup(function(){
+          $('#results').html('');
+          $('#repair-keyword').val('');
+          var searchField = $('#repair-keyword').val();
+          var expression = new RegExp(searchField, "i");
+
+          $.getJSON('../public/javascripts/repairItems.json', function(data) {
+            $.each(data.repairItems, function(key, value){
+              // console.log(value.name);
+              if (value.name.search(expression) !=1 ) {
+                $('#results').append('<option value=" ' + value.name + ' ">' + value.name + '</option>')
+              }
+            })
+          });
+        });
+        $('#results').on('click', 'li', function() {
+          var click_text = $(this).text().split('|');
+          $('#repair-keyword').val($.trim(click_text[0]));
+          $('#result').html();
+        });
+
+      });
+  </script>
+
+  {% endblock %}
+{% endblock %}

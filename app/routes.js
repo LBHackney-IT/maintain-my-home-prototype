@@ -40,8 +40,20 @@ router.get('/raiserepair/search-property', function (req, res) {
   res.render('raiserepair/search-property')
 });
 
-router.get('/raiserepair/cannot-describe-repair', function (req, res) {
-  res.render('raiserepair/cannot-describe-repair')
+router.get('/raiserepair/describe-repair', function (req, res) {
+  res.render('raiserepair/describe-repair')
+});
+
+router.get('/raiserepair/describe-repair-contact', function (req, res) {
+  res.render('raiserepair/describe-repair-contact')
+});
+
+router.get('/raiserepair/describe-repair-address', function (req, res) {
+  res.render('raiserepair/describe-repair-address')
+});
+
+router.get('/raiserepair/describe-repair-confirmation', function (req, res) {
+  res.render('raiserepair/describe-repair-confirmation')
 });
 
 router.get('/raiserepair/cannot-find-property', function (req, res) {
