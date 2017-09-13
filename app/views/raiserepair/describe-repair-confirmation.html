@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Hackney - Maintain My Home
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">
+        Maintain My Home
+        <span class="heading-secondary">Request a repair</span>
+      </h1>
+
+      <h2 class="heading-medium">Thank you {{ data ['full-name'] }}</h2>
+
+      <div class="govuk-box-highlight">
+        <p class="lede">Your reference number for repair request is <strong class="bold-small"> ON-876-009</strong>.<br> We have sent it to your phone.</p>
+      </div>
+
+      <p>We will call you within next two days, between
+        <strong class="bold-small">
+
+          {% if data['morningCall'] and data['afternoonCall']  %}
+            8am - 5pm
+          {% elif data['morningCall'] %}
+            8am and 12pm
+          {% elif data['afternoonCall'] %}
+            12pm and 5pm
+          {% endif %}
+
+        </strong>
+
+        {% if data['schoolRun'] %}
+          (avoid school run)
+        {% endif %}
+
+        to arrange a repair appointment.</p>
+
+      <p><strong class="bold">If you have any questions, please call us on <span itemprop="telephone"><a href="tel:+020 8356 3691">
+      020 8356 3691</a></span></strong> and quote your reference number <strong class="bold-small"> ON-876-009</strong>. We are open Monday to Friday 8am - 7pm and Saturdays 9am - 1pm.</p>
+    </div>
+  </div>
+
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h2 class="heading-medium">Summary</h2>
+
+      <p class="heading-small">Repair description</p>
+      <p>{{ data ['repair-describe'] }}</p>
+
+      <p class="heading-small">Your details</p>
+      <p>Name: {{ data ['full-name'] }}</p>
+      <p>Phone: {{ data ['telephone-number'] }}</p>
+      <p>Address: {{ data ['address'] }}</p>
+
+    </div>
+  </div>
+
+</main>
+
+{% endblock %}
+
+{% block scripts %}
+  {% include "includes/scripts.html" %}
+  {% block page_scripts %}
+
+  <!-- additional scripts here -->
+
+  {% endblock %}
+{% endblock %}

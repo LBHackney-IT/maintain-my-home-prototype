@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Hackney - Maintain My Home
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">
+        Maintain My Home
+        <span class="heading-secondary">Request a repair</span>
+      </h1>
+      <form action="/raiserepair/describe-repair-address" method="get" class="form">
+        <h2 class="heading-medium">
+          Who should we contact about this repair?
+        </h2>
+        <p>We will contact you within the next 2 days to book an appointment for your repair.<p>
+
+        <div class="form-group">
+          <label class="form-label" for="full-name">Full name</label>
+          <input class="form-control" id="full-name" type="text" name="full-name" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="telephone-number">Mobile number</label>
+          <input class="form-control" id="telephone-number" type="number" name="telephone-number" required>
+        </div>
+
+        <h3 class="heading-small">Choose what time is best to call you</h3>
+        <div class="form-group">
+          <fieldset class="">
+
+            <legend class="visuallyhidden">Choose a time slot fo a call</legend>
+
+            <div class="multiple-choice">
+              <input id="morningCall" type="checkbox" name="morningCall" value="morning">
+              <label for="morningCall">morning, 8am - 12pm</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="morningCall" type="checkbox" name="afternoonCall" value="afternoon">
+              <label for="afternoonCall">afternoon, 12pm - 5pm</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="schoolRun" type="checkbox" name="schoolRun" value="schoolRun">
+              <label for="schoolRun">Avoid school run</label>
+            </div>
+
+          </fieldset>
+        </div>
+
+          <div class="form-group">
+            <input class="button" type="submit" value="Continue">
+          </div>
+        </form>
+
+    </div>
+
+    <div class="column-one-third">
+      <aside role="submited-steps">
+        <h3 class="heading-large"><span class="heading-secondary">Your report</span></h3>
+        <p class="heading-small">Problem</p>
+        <p>Description: {{ data['repair-describe'] }}</p>
+
+      {% if data['repair-describe-photo'] %}
+
+        <p>Photo: {{ data['repair-describe-photo'] }}</p>
+
+      {% endif %}
+
+      </aside>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+{% block scripts %}
+  {% include "includes/scripts.html" %}
+  {% block page_scripts %}
+
+  <!-- additional scripts here -->
+
+  {% endblock %}
+{% endblock %}

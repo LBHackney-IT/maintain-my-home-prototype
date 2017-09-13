@@ -68,7 +68,9 @@
         <h3 class="heading-large"><span class="heading-secondary">Your report</span></h3>
         <p class="heading-small">Problem</p>
         <p>Type: {{ data ['commonRepair'] }}</p>
+        {% if data ['repair-notes'] %}
         <p>Description: {{ data ['repair-notes'] }}</p>
+        {% endif %}
       </aside>
     </div>
   </div>

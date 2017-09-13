@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Hackney - Maintain My Home
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">
+        Maintain My Home
+        <span class="heading-secondary">Request a repair</span>
+      </h1>
+
+      <form action="/raiserepair/describe-repair-contact" method="post" class="form">
+        <h2 class="heading-medium">
+          Please describe your repair problem
+        </h2>
+
+        <div class="form-group">
+          <label class="form-label" for="repair-describe">
+            Please include details such as:
+            <ul class='list list-bullet'>
+              <li>which rooms are affected?</li>
+              <li>what part is affected, what material is it made of</li>
+            </ul>
+          </label>
+          <textarea class="form-control form-control-3-4" name="repair-describe" id="repair-describe" rows="5" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <div class="question" id="repair-describe-photo">
+            <label class='h4' for="repair-describe-photo">
+              <span class="question-heading">
+                Add a photo
+              </span>
+            </label>
+            <span class="question-optional">
+              <strong>(optional)</strong>
+            </span>
+            <br>
+            <input
+              type="file"
+              name="repair-describe-photo"
+              id="repair-describe-photo"
+              accept="image/*"
+              class="file-upload-input"/>
+          </div>
+        </div>
+
+        <div class="form-group inline">
+          <input class="button" type="submit" value="Continue">
+        </div>
+
+      </form>
+    </div>
+<!--
+    <div class="column-one-third">
+      <aside role="submited-steps">
+        <h6 class="heading-medium heading-secondary">Steps completed 2/4</h6>
+        <p class="heading-small">1. Repair problem</p>
+        <p>Title: {{ data ['repairType'] }}</p> -->
+
+        <!-- {% for item in items %}
+        <p> {{ item.name }} </p>
+        {% endfor %} -->
+        <!-- <hr>
+      </aside>
+    </div> -->
+
+  </div>
+</main>
+
+{% endblock %}
