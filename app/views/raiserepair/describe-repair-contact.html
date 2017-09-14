@@ -45,11 +45,6 @@
               <label for="afternoonCall">afternoon, 12pm - 5pm</label>
             </div>
 
-            <div class="multiple-choice">
-              <input id="schoolRun" type="checkbox" name="schoolRun" value="schoolRun">
-              <label for="schoolRun">10am - 2pm (avoiding school run)</label>
-            </div>
-
           </fieldset>
         </div>
 
@@ -68,7 +63,6 @@
       <aside role="submited-steps">
         <h3 class="heading-large"><span class="heading-secondary">Your report</span></h3>
         <p class="heading-small">Problem</p>
-        <p>Type: Something else</p>
         <p>Description: {{ data['repair-describe'] }}</p>
 
       {% if data['repair-describe-photo'] %}

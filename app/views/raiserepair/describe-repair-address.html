@@ -66,7 +66,6 @@
       <aside role="submited-steps">
         <h3 class="heading-large"><span class="heading-secondary">Your report</span></h3>
         <p class="heading-small">Problem</p>
-        <p>Something else</p>
         <p>Description: {{ data['repair-describe'] }}</p>
 
       {% if data['repair-describe-photo'] %}
@@ -79,17 +78,15 @@
         <p>Tel number: {{ data['telephone-number'] }}</p>
         <p>Available for call:
 
-          {% if data['morningCall'] and data['afternoonCall'] and data['schoolRun'] %}
-            8am - 5pm (avoid school run)
+          {% if data['morningCall'] and data['afternoonCall'] %}
+            8am - 5pm
 
-          {% elseif data['morningCall'] and not data['afternoonCall'] and not data['schoolRun'] %}
+          {% elseif data['morningCall'] and not data['afternoonCall'] %}
             8am - 12pm
 
-          {% elseif data['afternoonCall'] and not data['morningCall'] and not data['schoolRun'] %}
+          {% elseif data['afternoonCall'] and not data['morningCall'] %}
             12pm - 5pm
 
-          {% elseif data['schoolRun'] and not data['afternoonCall'] and not data['morningCall'] %}
-            10am - 2pm
           {% endif %}
         </p>
 
