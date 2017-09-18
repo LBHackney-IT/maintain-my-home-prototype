@@ -25,17 +25,13 @@
 
           {% if data['morningCall'] and data['afternoonCall']  %}
             8am - 5pm
-          {% elif data['morningCall'] %}
+          {% elseif data['morningCall'] and not data['afternoonCall'] %}
             8am and 12pm
-          {% elif data['afternoonCall'] %}
+          {% elseif data['afternoonCall'] and not data['morningCall'] %}
             12pm and 5pm
           {% endif %}
 
         </strong>
-
-        {% if data['schoolRun'] %}
-          (avoid school run)
-        {% endif %}
 
         to arrange a repair appointment.</p>
 

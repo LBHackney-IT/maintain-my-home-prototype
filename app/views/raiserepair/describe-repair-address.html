@@ -56,6 +56,10 @@
       </div>
     </form>
 
+    <p>
+      <a href="/raiserepair/describe-repair-contact/">Back to add contact details</a>
+    </p>
+
     </div>
 
     <div class="column-one-third">
@@ -74,16 +78,15 @@
         <p>Tel number: {{ data['telephone-number'] }}</p>
         <p>Available for call:
 
-          {% if data['morningCall'] %}
-            morning,
-          {% endif %}
+          {% if data['morningCall'] and data['afternoonCall'] %}
+            8am - 5pm
 
-          {% if data['afternoonCall'] %}
-            afternoon,
-          {% endif %}
+          {% elseif data['morningCall'] and not data['afternoonCall'] %}
+            8am - 12pm
 
-          {% if data['schoolRun'] %}
-            avoid school run
+          {% elseif data['afternoonCall'] and not data['morningCall'] %}
+            12pm - 5pm
+
           {% endif %}
         </p>
 
