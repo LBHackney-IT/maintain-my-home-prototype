@@ -14,7 +14,7 @@
         <span class="heading-secondary">Request a repair</span>
       </h1>
 
-      <form action="/raiserepair/book-appointment" method="post" class="form">
+      <form action="/raiserepair/search-property-results" method="post" class="form">
         <div class="form-group">
           <h2 class="heading-medium">
              What is your address?
@@ -22,35 +22,13 @@
 
           <div class="form-group">
             <label class="form-label" for="postcode">
-              Search for your address by postcode
+              Postcode
             </label>
-            <input class="form-control" id="postcode" type="text" name="postcode">
-            <a class="button" id="address-selection-button" data-target="address-selection">Find my address</a>
+            <input class="form-control" id="postcode" type="text" name="postcode" required>
           </div>
 
-          <div class="form-group js-hidden" id="address-selection">
-            <div class="multiple-choice">
-              <input id="property1" type="radio" name="address" value="Flat 1, 8 Hoxton Square, N1 6NU">
-              <label for="property1">Flat 1, 8 Hoxton Square, N1 6NU</label>
-            </div>
-            <div class="multiple-choice">
-              <input id="property1" type="radio" name="address" value="Flat 2, 8 Hoxton Square, N1 6NU">
-              <label for="property1">Flat 2, 8 Hoxton Square, N1 6NU</label>
-            </div>
-            <div class="multiple-choice">
-              <input id="property1" type="radio" name="address" value="Flat 4, 8 Hoxton Square, N1 6NU">
-              <label for="property1">Flat 4, 8 Hoxton Square, N1 6NU</label>
-            </div>
-            <div class="multiple-choice">
-              <input id="property1" type="radio" name="address" value="Flat 5, 8 Hoxton Square, N1 6NU">
-              <label for="property1">Flat 5, 8 Hoxton Square, N1 6NU</label>
-            </div>
-            <div class="form-group">
-              <input class="button" type="submit" value="Use this address">
-            </div>
-            <div class="form-group">
-              <a href="/raiserepair/cannot-find-property" class="button">My address isn't here</a>
-            </div>
+          <div class="form-group">
+            <input class="button" type="submit" value="Find my address">
           </div>
         </div>
       </form>
