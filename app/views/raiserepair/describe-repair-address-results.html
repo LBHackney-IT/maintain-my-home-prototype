@@ -1,0 +1,97 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Hackney - Maintain My Home
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">
+        Maintain My Home
+        <span class="heading-secondary">Request a repair</span>
+      </h1>
+
+      <form action="/raiserepair/describe-repair-confirmation" method="post" class="form">
+        <div class="form-group">
+          <h2 class="heading-medium">
+             What is your address?
+          </h2>
+
+          <div class="form-group">
+            <label class="form-label" for="postcode">
+              Postcode
+            </label>
+
+            <p><strong>{{ data['postcode'] | upper }}</strong> &nbsp; <a href="/raiserepair/describe-repair-address.html">Change</a></p>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="postcode">
+              Select an address
+            </label>
+
+            <div class="multiple-choice" data-target="select-address">
+              <input id="property1" type="radio" name="address" value="Flat 1, 8 Hoxton Square, N1 6NU">
+              <label for="property1">Flat 1, 8 Hoxton Square, N1 6NU</label>
+            </div>
+            <div class="multiple-choice" data-target="select-address">
+              <input id="property2" type="radio" name="address" value="Flat 2, 8 Hoxton Square, N1 6NU">
+              <label for="property2">Flat 2, 8 Hoxton Square, N1 6NU</label>
+            </div>
+            <div class="multiple-choice" data-target="select-address">
+              <input id="property4" type="radio" name="address" value="Flat 4, 8 Hoxton Square, N1 6NU">
+              <label for="property4">Flat 4, 8 Hoxton Square, N1 6NU</label>
+            </div>
+            <div class="multiple-choice" data-target="select-address">
+              <input id="property5" type="radio" name="address" value="Flat 5, 8 Hoxton Square, N1 6NU">
+              <label for="property5">Flat 5, 8 Hoxton Square, N1 6NU</label>
+            </div>
+
+            <div class="multiple-choice"></div>
+
+            <div class="multiple-choice" data-target="address-not-here">
+              <input id="property0" type="radio" name="address" value="N/A">
+              <label for="property0">My address isn't here</label>
+            </div>
+
+            <div class="form-group js-hidden" id="select-address">
+              <br />
+              <input class="button" type="submit" value="Use this address">
+            </div>
+
+            <div class="form-group js-hidden" id="address-not-here">
+              <br />
+              <a href="/raiserepair/cannot-find-property" class="button">Use this address</a>
+            </div>
+          </div>
+        </div>
+      </form>
+
+
+      <p>
+        <a href="/raiserepair/describe-repair-address/">Back to property search</a>
+      </p>
+
+    </div>
+
+    <div class="column-one-third">
+      <aside role="submited-steps">
+        <h3 class="heading-large"><span class="heading-secondary">Your report</span></h3>
+        <p class="heading-small">Problem</p>
+        <p>Type: {{ data ['commonRepair'] }}</p>
+        {% if data ['repair-notes'] %}
+        <p>Description: {{ data ['repair-notes'] }}</p>
+        {% endif %}
+      </aside>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+{% block scripts %}
+  {% include "includes/scripts.html" %}
+{% endblock %}
